@@ -193,6 +193,60 @@ module.hot.accept(reloadCSS);
 "use strict";
 
 require("./style.sass");
+
+var handleDragEnter = function handleDragEnter(e) {
+  e.preventDefault();
+  e.target.classList.add('drag-over');
+};
+
+var handleDragOver = function handleDragOver(e) {
+  e.preventDefault();
+  e.target.classList.add('drag-over');
+};
+
+var handleDragLeave = function handleDragLeave(e) {
+  e.target.classList.remove('drag-over');
+};
+
+var handleDrop = function handleDrop(e) {
+  // e.target.classList.remove('drag-over');
+  // get the draggable element
+  // const id = e.dataTransfer.getData('text/plain');
+  // const draggable = document.getElementById(id);
+  console.log("e", e.dataTransfer.getData('text/plain')); // add it to the drop target
+  // e.target.appendChild(draggable);
+  // display the draggable element
+  // draggable.classList.remove('hide');
+};
+
+var handleDragStart = function handleDragStart(e) {
+  e.dataTransfer.setData('text/plain', e.target.id);
+  setTimeout(function () {
+    e.target.classList.add('hide');
+  }, 0);
+};
+
+var cardContents = document.querySelectorAll('.card__content');
+cardContents.forEach(function (cardContent) {
+  cardContent.addEventListener('dragenter', handleDragEnter);
+  cardContent.addEventListener('dragover', handleDragOver);
+  cardContent.addEventListener('dragleave', handleDragLeave);
+  cardContent.addEventListener('drop', handleDrop);
+});
+var cardItems = document.querySelectorAll('.card__item');
+cardItems.forEach(function (cardItem) {
+  cardItem.addEventListener('dragstart', handleDragStart);
+});
+/*
+
+  onDragStart
+  onDragLeave
+  onDragOver
+  onDragEnter
+  onDragOut
+  onDrop
+
+*/
 },{"./style.sass":"style.sass"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -221,7 +275,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14209" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1968" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

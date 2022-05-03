@@ -55,4 +55,12 @@
   box-shadow: 4px 4px 8px -2px rgba(34, 60, 80, 0.09);
 }
 
+.drag-over {
+  border: solid 1px #7b7b7b;
+}
+
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=/drag-and-drop.e31bb0bc.css.map */
