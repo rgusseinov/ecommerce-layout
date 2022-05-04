@@ -24,7 +24,7 @@
 			background-color: #4e4cf0d7
 		&.done
 			background-color: #1a9d1dd7
-	&__content
+	&__lists
 		display: flex
 		flex-direction: column
 		align-items: center
@@ -44,8 +44,13 @@
 		-webkit-box-shadow: 4px 4px 8px -2px rgba(34, 60, 80, 0.09)
 		-moz-box-shadow: 4px 4px 8px -2px rgba(34, 60, 80, 0.09)
 		box-shadow: 4px 4px 8px -2px rgba(34, 60, 80, 0.09)
+	&:hover
+		cursor: pointer
 
-.drag-over 
+.drag-over
 	border: solid 1px #7b7b7b
+.selected
+	border: solid 1px #7b7b7b
+	cursor: pointer
 .hide
 	display: none
