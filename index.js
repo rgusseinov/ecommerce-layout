@@ -1,56 +1,7 @@
 import "./style.sass";
 
-/* const handleDragEnter = (e) => {
-  e.preventDefault();
-  e.target.classList.add("drag-over");
-};
 
-const handleDragOver = (e) => {
-  e.preventDefault();
-  e.target.classList.add("drag-over");
-};
-
-const handleDragLeave = (e) => {
-  e.target.classList.remove("drag-over");
-};
-
-const handleDrop = (e) => {
-  e.target.classList.remove("drag-over");
-
-  // get the draggable element
-  const className = e.dataTransfer.getData("text/plain");
-  const draggable = document.querySelector(className);
-
-  // add it to the drop target
-  e.target.appendChild(draggable);
-  // display the draggable element
-  draggable.classList.remove("hide");
-};
-
-const handleDragStart = (e) => {
-  e.dataTransfer.setData("text/plain", e.target.className);
-  console.log(e.target.className);
-
-  setTimeout(() => {
-    e.target.classList.add("hide");
-  }, 0);
-};
-
-const cardContents = document.querySelectorAll(".card__content");
-cardContents.forEach((cardContent) => {
-  cardContent.addEventListener("dragenter", handleDragEnter);
-  cardContent.addEventListener("dragover", handleDragOver);
-  cardContent.addEventListener("dragleave", handleDragLeave);
-  cardContent.addEventListener("drop", handleDrop);
-});
-
-const cardItems = document.querySelectorAll(".card__item");
-cardItems.forEach((cardItem) => {
-  cardItem.addEventListener("dragstart", handleDragStart);
-});
- */
-
-const taskListElement = document.querySelector(".card__lists");
+/* const taskListElement = document.querySelector(".card__lists");
 const taskElements = document.querySelectorAll(".card__item");
 
 for (const task of taskElements) {
@@ -77,10 +28,67 @@ taskListElement.addEventListener("dragover", (e) => {
 
   if (!isMoveable) return;
 
+  console.log(`activeElement`, activeElement);
+  console.log(`currentELement`, currentELement);
+
   const nextElement =
-    currentELement === activeElement.nextElementSibling
-      ? currentELement.nextElementSibling
+    currentELement === activeElement.nextElementSibling ? currentELement.nextElementSibling
       : currentELement;
 
   taskListElement.insertBefore(activeElement, nextElement);
 });
+
+ */
+
+
+const taskListElement = document.querySelectorAll(".card__lists");
+const taskElements = document.querySelectorAll(".card__item");
+
+for (const task of taskElements){
+  task.draggable = true;
+}
+
+taskListElement.forEach(list => {
+  list.addEventListener('dragstart', handleDragStart);
+  list.addEventListener('dragend', handleDragEnd);
+  list.addEventListener('dragover', handleDragOver);
+});
+
+function handleDragStart(e){
+  e.target.classList.add("selected");
+}
+
+function handleDragEnd(e){
+  e.target.classList.remove("selected");
+}
+
+function handleDragOver(e){
+  e.preventDefault();
+
+  // console.log(`activeElement`, e.target.parentElement.querySelector(".selected"));
+  // console.log(`currentElement`, e.target);
+
+  // console.log(e.target.parentElement);
+
+  const activeElement = e.target.parentElement.querySelector(".selected")
+  const currentElement = e.target;
+
+  const isMoveable =
+    activeElement !== currentElement &&
+    currentElement.classList.contains("card__item");
+
+  if (!isMoveable) return;
+
+  // console.log(`activeElement`, activeElement);
+  // console.log(`currentELement`, currentElement);
+
+  const nextElement =
+      currentElement === activeElement.nextElementSibling
+      ? currentElement.nextElementSibling
+      : currentElement;
+
+  e.target.parentElement.insertBefore(activeElement, nextElement);
+
+}
+
+

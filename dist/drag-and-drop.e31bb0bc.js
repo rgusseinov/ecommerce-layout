@@ -200,56 +200,45 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-/* const handleDragEnter = (e) => {
-  e.preventDefault();
-  e.target.classList.add("drag-over");
-};
+/* const taskListElement = document.querySelector(".card__lists");
+const taskElements = document.querySelectorAll(".card__item");
 
-const handleDragOver = (e) => {
-  e.preventDefault();
-  e.target.classList.add("drag-over");
-};
+for (const task of taskElements) {
+  task.draggable = true;
+}
 
-const handleDragLeave = (e) => {
-  e.target.classList.remove("drag-over");
-};
-
-const handleDrop = (e) => {
-  e.target.classList.remove("drag-over");
-
-  // get the draggable element
-  const className = e.dataTransfer.getData("text/plain");
-  const draggable = document.querySelector(className);
-
-  // add it to the drop target
-  e.target.appendChild(draggable);
-  // display the draggable element
-  draggable.classList.remove("hide");
-};
-
-const handleDragStart = (e) => {
-  e.dataTransfer.setData("text/plain", e.target.className);
-  console.log(e.target.className);
-
-  setTimeout(() => {
-    e.target.classList.add("hide");
-  }, 0);
-};
-
-const cardContents = document.querySelectorAll(".card__content");
-cardContents.forEach((cardContent) => {
-  cardContent.addEventListener("dragenter", handleDragEnter);
-  cardContent.addEventListener("dragover", handleDragOver);
-  cardContent.addEventListener("dragleave", handleDragLeave);
-  cardContent.addEventListener("drop", handleDrop);
+taskListElement.addEventListener("dragstart", (e) => {
+  e.target.classList.add("selected");
 });
 
-const cardItems = document.querySelectorAll(".card__item");
-cardItems.forEach((cardItem) => {
-  cardItem.addEventListener("dragstart", handleDragStart);
+taskListElement.addEventListener("dragend", (e) => {
+  e.target.classList.remove("selected");
 });
+
+taskListElement.addEventListener("dragover", (e) => {
+  e.preventDefault();
+
+  const activeElement = taskListElement.querySelector(".selected");
+  const currentELement = e.target;
+
+  const isMoveable =
+    activeElement !== currentELement &&
+    currentELement.classList.contains("card__item");
+
+  if (!isMoveable) return;
+
+  console.log(`activeElement`, activeElement);
+  console.log(`currentELement`, currentELement);
+
+  const nextElement =
+    currentELement === activeElement.nextElementSibling ? currentELement.nextElementSibling
+      : currentELement;
+
+  taskListElement.insertBefore(activeElement, nextElement);
+});
+
  */
-var taskListElement = document.querySelector(".card__lists");
+var taskListElement = document.querySelectorAll(".card__lists");
 var taskElements = document.querySelectorAll(".card__item");
 
 var _iterator = _createForOfIteratorHelper(taskElements),
@@ -266,21 +255,34 @@ try {
   _iterator.f();
 }
 
-taskListElement.addEventListener("dragstart", function (e) {
+taskListElement.forEach(function (list) {
+  list.addEventListener('dragstart', handleDragStart);
+  list.addEventListener('dragend', handleDragEnd);
+  list.addEventListener('dragover', handleDragOver);
+});
+
+function handleDragStart(e) {
   e.target.classList.add("selected");
-});
-taskListElement.addEventListener("dragend", function (e) {
+}
+
+function handleDragEnd(e) {
   e.target.classList.remove("selected");
-});
-taskListElement.addEventListener("dragover", function (e) {
-  e.preventDefault();
-  var activeElement = taskListElement.querySelector(".selected");
-  var currentELement = e.target;
-  var isMoveable = activeElement !== currentELement && currentELement.classList.contains("card__item");
-  if (!isMoveable) return;
-  var nextElement = currentELement === activeElement.nextElementSibling ? currentELement.nextElementSibling : currentELement;
-  taskListElement.insertBefore(activeElement, nextElement);
-});
+}
+
+function handleDragOver(e) {
+  e.preventDefault(); // console.log(`activeElement`, e.target.parentElement.querySelector(".selected"));
+  // console.log(`currentElement`, e.target);
+  // console.log(e.target.parentElement);
+
+  var activeElement = e.target.parentElement.querySelector(".selected");
+  var currentElement = e.target;
+  var isMoveable = activeElement !== currentElement && currentElement.classList.contains("card__item");
+  if (!isMoveable) return; // console.log(`activeElement`, activeElement);
+  // console.log(`currentELement`, currentElement);
+
+  var nextElement = currentElement === activeElement.nextElementSibling ? currentElement.nextElementSibling : currentElement;
+  e.target.parentElement.insertBefore(activeElement, nextElement);
+}
 },{"./style.sass":"style.sass"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -309,7 +311,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57349" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4306" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
