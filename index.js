@@ -1,86 +1,59 @@
 import "./style.sass";
 
-/* const handleDragEnter = (e) => {
-  e.preventDefault();
-  e.target.classList.add("drag-over");
-};
+document.addEventListener("DOMContentLoaded", (event) => {
+  let dragSrcEl = null;
 
-const handleDragOver = (e) => {
-  e.preventDefault();
-  e.target.classList.add("drag-over");
-};
+  function handleDragStart(e) {
+    this.style.opacity = "0.4";
 
-const handleDragLeave = (e) => {
-  e.target.classList.remove("drag-over");
-};
+    dragSrcEl = this;
 
-const handleDrop = (e) => {
-  e.target.classList.remove("drag-over");
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/html", this.innerHTML);
+  }
 
-  // get the draggable element
-  const className = e.dataTransfer.getData("text/plain");
-  const draggable = document.querySelector(className);
+  function handleDragEnd(e) {
+    this.style.opacity = "1";
 
-  // add it to the drop target
-  e.target.appendChild(draggable);
-  // display the draggable element
-  draggable.classList.remove("hide");
-};
+    items.forEach(function (item) {
+      item.classList.remove("over");
+    });
+  }
 
-const handleDragStart = (e) => {
-  e.dataTransfer.setData("text/plain", e.target.className);
-  console.log(e.target.className);
+  function handleDragOver(e) {
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
 
-  setTimeout(() => {
-    e.target.classList.add("hide");
-  }, 0);
-};
+    return false;
+  }
 
-const cardContents = document.querySelectorAll(".card__content");
-cardContents.forEach((cardContent) => {
-  cardContent.addEventListener("dragenter", handleDragEnter);
-  cardContent.addEventListener("dragover", handleDragOver);
-  cardContent.addEventListener("dragleave", handleDragLeave);
-  cardContent.addEventListener("drop", handleDrop);
-});
+  function handleDragEnter(e) {
+    this.classList.add("over");
+  }
 
-const cardItems = document.querySelectorAll(".card__item");
-cardItems.forEach((cardItem) => {
-  cardItem.addEventListener("dragstart", handleDragStart);
-});
- */
+  function handleDragLeave(e) {
+    this.classList.remove("over");
+  }
 
-const taskListElement = document.querySelector(".card__lists");
-const taskElements = document.querySelectorAll(".card__item");
+  function handleDrop(e) {
+    e.stopPropagation(); // препятствует перенаправлению в браузере.
 
-for (const task of taskElements) {
-  task.draggable = true;
-}
+    if (dragSrcEl !== this) {
+      dragSrcEl.innerHTML = this.innerHTML;
+      this.innerHTML = e.dataTransfer.getData("text/html");
+    }
 
-taskListElement.addEventListener("dragstart", (e) => {
-  e.target.classList.add("selected");
-});
+    return false;
+  }
 
-taskListElement.addEventListener("dragend", (e) => {
-  e.target.classList.remove("selected");
-});
-
-taskListElement.addEventListener("dragover", (e) => {
-  e.preventDefault();
-
-  const activeElement = taskListElement.querySelector(".selected");
-  const currentELement = e.target;
-
-  const isMoveable =
-    activeElement !== currentELement &&
-    currentELement.classList.contains("card__item");
-
-  if (!isMoveable) return;
-
-  const nextElement =
-    currentELement === activeElement.nextElementSibling
-      ? currentELement.nextElementSibling
-      : currentELement;
-
-  taskListElement.insertBefore(activeElement, nextElement);
+  let items = document.querySelectorAll(".container .box");
+  items.forEach(function (item) {
+    item.addEventListener("dragstart", handleDragStart);
+    item.addEventListener("dragover", handleDragOver);
+    item.addEventListener("dragenter", handleDragEnter);
+    item.addEventListener("dragleave", handleDragLeave);
+    item.addEventListener("dragend", handleDragEnd);
+    item.addEventListener("drop", handleDrop);
+  });
 });
