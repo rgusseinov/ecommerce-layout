@@ -196,16 +196,16 @@ require("./style.sass");
 
 document.addEventListener("DOMContentLoaded", function (event) {
   var items = document.querySelectorAll(".card__lists .card__item");
+  document.querySelector(".card__meta").innerHTML = "(" + items.length + ")";
   var draggableElement = null;
 
   function handleDragStart(e) {
     this.style.opacity = "0.4";
     this.classList.add("selected");
-    console.log("this", this);
     draggableElement = e.target;
   }
 
-  function handleDragEnd(e) {
+  function handleDragEnd() {
     this.style.opacity = "1";
     clearSelection();
   }
@@ -213,6 +213,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function handleDragOver(e) {
     if (e.preventDefault) {
       e.preventDefault();
+    }
+
+    if (document.querySelector(".card__lists .selected") === null) {
+      e.target.classList.remove("over");
+      return;
     }
 
     return false;
@@ -228,18 +233,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function handleDrop(e) {
     e.stopPropagation();
+    var isMoveable = draggableElement !== document.querySelector(".card__lists .over") && document.querySelector(".card__lists .selected");
 
-    if (!document.querySelector(".card__lists .selected")) {
+    if (!isMoveable) {
       clearSelection();
       return;
     }
 
-    var isMoveable = draggableElement !== document.querySelector(".card__lists .over");
-    if (!isMoveable) return;
     var bufferDraggable = draggableElement.innerHTML;
     draggableElement.innerHTML = document.querySelector(".card__lists .over").innerHTML;
     document.querySelector(".card__lists .over").innerHTML = bufferDraggable;
-    console.log("render");
     clearSelection();
     return false;
   }
@@ -289,7 +292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56943" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56993" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

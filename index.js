@@ -2,26 +2,28 @@ import "./style.sass";
 
 document.addEventListener("DOMContentLoaded", (event) => {
   let items = document.querySelectorAll(".card__lists .card__item");
+  document.querySelector(".card__meta").innerHTML = "(" + items.length + ")";
   let draggableElement = null;
 
   function handleDragStart(e) {
     this.style.opacity = "0.4";
     this.classList.add("selected");
 
-    console.log(`this`, this);
-
     draggableElement = e.target;
   }
 
-  function handleDragEnd(e) {
+  function handleDragEnd() {
     this.style.opacity = "1";
-
     clearSelection();
   }
 
   function handleDragOver(e) {
     if (e.preventDefault) {
       e.preventDefault();
+    }
+    if (document.querySelector(".card__lists .selected") === null) {
+      e.target.classList.remove("over");
+      return;
     }
 
     return false;
@@ -38,21 +40,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function handleDrop(e) {
     e.stopPropagation();
 
-    if (!document.querySelector(".card__lists .selected")) {
+    const isMoveable =
+      draggableElement !== document.querySelector(".card__lists .over") &&
+      document.querySelector(".card__lists .selected");
+    if (!isMoveable) {
       clearSelection();
       return;
     }
-
-    const isMoveable =
-      draggableElement !== document.querySelector(".card__lists .over");
-    if (!isMoveable) return;
-
     const bufferDraggable = draggableElement.innerHTML;
     draggableElement.innerHTML =
       document.querySelector(".card__lists .over").innerHTML;
     document.querySelector(".card__lists .over").innerHTML = bufferDraggable;
-
-    console.log("render");
 
     clearSelection();
     return false;
