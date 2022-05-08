@@ -1,23 +1,22 @@
 import "./style.sass";
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  let dragSrcEl = null;
+  let items = document.querySelectorAll(".card__lists .card__item");
+  let draggableElement = null;
 
   function handleDragStart(e) {
     this.style.opacity = "0.4";
+    this.classList.add("selected");
 
-    dragSrcEl = this;
+    console.log(`this`, this);
 
-    e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/html", this.innerHTML);
+    draggableElement = e.target;
   }
 
   function handleDragEnd(e) {
     this.style.opacity = "1";
 
-    items.forEach(function (item) {
-      item.classList.remove("over");
-    });
+    clearSelection();
   }
 
   function handleDragOver(e) {
@@ -37,23 +36,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   function handleDrop(e) {
-    e.stopPropagation(); // препятствует перенаправлению в браузере.
+    e.stopPropagation();
 
-    if (dragSrcEl !== this) {
-      dragSrcEl.innerHTML = this.innerHTML;
-      this.innerHTML = e.dataTransfer.getData("text/html");
+    if (!document.querySelector(".card__lists .selected")) {
+      clearSelection();
+      return;
     }
 
+    const isMoveable =
+      draggableElement !== document.querySelector(".card__lists .over");
+    if (!isMoveable) return;
+
+    const bufferDraggable = draggableElement.innerHTML;
+    draggableElement.innerHTML =
+      document.querySelector(".card__lists .over").innerHTML;
+    document.querySelector(".card__lists .over").innerHTML = bufferDraggable;
+
+    console.log("render");
+
+    clearSelection();
     return false;
   }
 
-  let items = document.querySelectorAll(".container .box");
   items.forEach(function (item) {
+    item.draggable = true;
+
     item.addEventListener("dragstart", handleDragStart);
+
     item.addEventListener("dragover", handleDragOver);
     item.addEventListener("dragenter", handleDragEnter);
     item.addEventListener("dragleave", handleDragLeave);
+
     item.addEventListener("dragend", handleDragEnd);
     item.addEventListener("drop", handleDrop);
   });
+
+  function clearSelection() {
+    items.forEach(function (item) {
+      item.classList.remove("over");
+      item.classList.remove("selected");
+    });
+  }
 });

@@ -195,20 +195,19 @@ module.hot.accept(reloadCSS);
 require("./style.sass");
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  var dragSrcEl = null;
+  var items = document.querySelectorAll(".card__lists .card__item");
+  var draggableElement = null;
 
   function handleDragStart(e) {
     this.style.opacity = "0.4";
-    dragSrcEl = this;
-    e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/html", this.innerHTML);
+    this.classList.add("selected");
+    console.log("this", this);
+    draggableElement = e.target;
   }
 
   function handleDragEnd(e) {
     this.style.opacity = "1";
-    items.forEach(function (item) {
-      item.classList.remove("over");
-    });
+    clearSelection();
   }
 
   function handleDragOver(e) {
@@ -228,18 +227,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   function handleDrop(e) {
-    e.stopPropagation(); // препятствует перенаправлению в браузере.
+    e.stopPropagation();
 
-    if (dragSrcEl !== this) {
-      dragSrcEl.innerHTML = this.innerHTML;
-      this.innerHTML = e.dataTransfer.getData("text/html");
+    if (!document.querySelector(".card__lists .selected")) {
+      clearSelection();
+      return;
     }
 
+    var isMoveable = draggableElement !== document.querySelector(".card__lists .over");
+    if (!isMoveable) return;
+    var bufferDraggable = draggableElement.innerHTML;
+    draggableElement.innerHTML = document.querySelector(".card__lists .over").innerHTML;
+    document.querySelector(".card__lists .over").innerHTML = bufferDraggable;
+    console.log("render");
+    clearSelection();
     return false;
   }
 
-  var items = document.querySelectorAll(".container .box");
   items.forEach(function (item) {
+    item.draggable = true;
     item.addEventListener("dragstart", handleDragStart);
     item.addEventListener("dragover", handleDragOver);
     item.addEventListener("dragenter", handleDragEnter);
@@ -247,6 +253,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     item.addEventListener("dragend", handleDragEnd);
     item.addEventListener("drop", handleDrop);
   });
+
+  function clearSelection() {
+    items.forEach(function (item) {
+      item.classList.remove("over");
+      item.classList.remove("selected");
+    });
+  }
 });
 },{"./style.sass":"style.sass"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -276,7 +289,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54263" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49889" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
