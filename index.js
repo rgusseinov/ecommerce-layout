@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let draggableElement = null;
 
   function handleDragStart(e) {
-    this.style.opacity = "0.4";
+    this.style.opacity = "0.3";
     this.classList.add("selected");
 
     draggableElement = e.target;
