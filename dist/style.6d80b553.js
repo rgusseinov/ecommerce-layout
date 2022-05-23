@@ -117,130 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/dragAndDrop.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-var cardMarkup = function cardMarkup(cardItems) {
-  var cardItemMarkup = cardItems.map(function (cardItem) {
-    return "<div class=\"card__item\">".concat(cardItem, "</div>");
-  }).join("");
-  return "<div class=\"card__header todo\">\n\t\t\t\t\t\t<div class=\"card__label\">Todo</div>\n\t\t\t\t\t\t<span class=\"card__meta\">(".concat(cardItems.length, ")</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card__lists\">").concat(cardItemMarkup, "</div>");
-};
-
-var dragAndDrop = /*#__PURE__*/function () {
-  function dragAndDrop(selector, options) {
-    _classCallCheck(this, dragAndDrop);
-
-    this.$el = document.querySelector(selector);
-    this.$cardItems = options.cardItems || [];
-    this.draggableElement = null;
-    this.cardItemElements = null;
-    this.render();
-    this.setup();
-  }
-
-  _createClass(dragAndDrop, [{
-    key: "render",
-    value: function render() {
-      this.$el.insertAdjacentHTML("afterbegin", cardMarkup(this.$cardItems));
-    }
-  }, {
-    key: "setup",
-    value: function setup() {
-      var _this = this;
-
-      this.cardItemElements = this.$el.querySelectorAll(".card__lists .card__item");
-      this.cardItemElements.forEach(function (cardItem) {
-        cardItem.draggable = true;
-        cardItem.addEventListener("dragstart", _this.handleDragStart.bind(_this));
-        cardItem.addEventListener("dragover", _this.handleDragOver.bind(_this));
-        cardItem.addEventListener("dragenter", _this.handleDragEnter.bind(_this));
-        cardItem.addEventListener("dragleave", _this.handleDragLeave.bind(_this));
-        cardItem.addEventListener("dragend", _this.handleDragEnd.bind(_this));
-        cardItem.addEventListener("drop", _this.handleDrop.bind(_this));
-      });
-    }
-  }, {
-    key: "handleDragStart",
-    value: function handleDragStart(e) {
-      e.target.classList.add("selected");
-      this.draggableElement = e.target;
-    }
-  }, {
-    key: "handleDragOver",
-    value: function handleDragOver(e) {
-      e.preventDefault();
-
-      if (this.$el.querySelector(".card__lists .selected") == null) {
-        e.target.classList.remove("over");
-        return;
-      }
-
-      var activeElement = this.$el.querySelector(".card__lists .selected");
-      var currentElement = e.target;
-      var nextElement = currentElement === activeElement.nextElementSibling ? activeElement.nextElementSibling : currentElement;
-      this.$el.querySelector(".card__lists").insertBefore(activeElement, nextElement);
-      return false;
-    }
-  }, {
-    key: "handleDragEnter",
-    value: function handleDragEnter(e) {
-      e.target.classList.add("over");
-    }
-  }, {
-    key: "handleDragLeave",
-    value: function handleDragLeave(e) {
-      e.target.classList.remove("over");
-    }
-  }, {
-    key: "handleDragEnd",
-    value: function handleDragEnd() {
-      this.clearSelection();
-    }
-  }, {
-    key: "handleDrop",
-    value: function handleDrop(e) {
-      e.stopPropagation();
-      var isMoveable = this.draggableElement !== this.$el.querySelector(".card__lists .over") && this.$el.querySelector(".card__lists .selected");
-
-      if (!isMoveable) {
-        this.clearSelection();
-        return;
-      }
-
-      var bufferDraggable = this.draggableElement.innerHTML;
-      this.draggableElement.innerHTML = this.$el.querySelector(".card__lists .over").innerHTML;
-      this.$el.querySelector(".card__lists .over").innerHTML = bufferDraggable;
-      this.clearSelection();
-      return false;
-    }
-  }, {
-    key: "clearSelection",
-    value: function clearSelection() {
-      this.cardItemElements.forEach(function (cardItem) {
-        cardItem.classList.remove("over");
-        cardItem.classList.remove("selected");
-      });
-    }
-  }]);
-
-  return dragAndDrop;
-}();
-
-var _default = dragAndDrop;
-exports.default = _default;
-},{}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -307,24 +184,18 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/style.sass":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/normalize.css/normalize.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-var _dragAndDrop = _interopRequireDefault(require("./src/dragAndDrop"));
-
-require("./src/style.sass");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-new _dragAndDrop.default("#card", {
-  cardItems: ["React", "Native JS", "Redux", "Graph QL"]
-});
-},{"./src/dragAndDrop":"src/dragAndDrop.js","./src/style.sass":"src/style.sass"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"normalize.css":"node_modules/normalize.css/normalize.css","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -352,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55993" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -528,5 +399,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/drag-and-drop.e31bb0bc.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/style.6d80b553.js.map
