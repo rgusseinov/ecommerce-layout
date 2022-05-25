@@ -1,2 +1,93 @@
 @import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap');
+body {
+  font-family: 'Jost', sans-serif;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.header {
+  &__wrapper {
+    border-bottom: 2px solid #ECF3FF;
+  }
+  &__top {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-top-menu {
+      display: flex;
+      &__block {
+        margin: 0 30px 0 0;
+        a {
+          color: #5D6C7B;
+          text-decoration: none;
+          font-size: 12px;
+          line-height: 17px;        
+        }
+        .block-social {
+          img {
+            margin: 0 8px 0 0;
+          }
+        }      
+      }
+    }
+    .header-contact {
+      display: flex;
+      flex: 0 0 150px;
 
+      &__phone {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 22px;
+        color: #282739;
+      }
+      &__phone-icon {
+        margin: 0 0 0 8px;
+      }
+    }
+  }
+
+  &__body {
+    height: 105px;
+    margin: 30px 0 0 0;
+    .body-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .header-logo {
+      width: 165px;
+    }
+    .header-catalog {
+      
+      .menu-catalog {
+        width: 114px;
+        height: 40px;
+        // padding: 1px 8px;
+        display: flex;
+        background-color: #6F73EE;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        &__icon {
+          margin: 0 5px 0 0;
+        }
+        &__label {
+
+        }
+      }
+    }
+    .header-search {
+      width: 603px;
+    }
+    .header-shopping {
+      width: 175px;
+    }
+
+
+  }
+
+
+}
