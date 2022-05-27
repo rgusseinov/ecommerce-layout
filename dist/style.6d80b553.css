@@ -387,9 +387,9 @@ body {
   flex: 0 0 150px;
 }
 .header__top .header-contact__phone {
-  font-weight: 500;
   font-size: 12px;
   line-height: 22px;
+  font-weight: bold;
   color: #282739;
 }
 .header__top .header-contact__phone-icon {
@@ -456,7 +456,6 @@ body {
   height: 7px;
 }
 .header__body .header-search .form-search__input {
-  width: 523px;
   position: relative;
 }
 .header__body .header-search .form-search__input input[type=text] {
@@ -469,7 +468,7 @@ body {
 .header__body .header-search .form-search__input input[type=submit] {
   position: absolute;
   top: 0;
-  right: -2px;
+  right: -27px;
   width: 40px;
   height: 40px;
   border: 0;
@@ -503,7 +502,7 @@ body {
 }
 .header .menu-header__list li a {
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #282739;
