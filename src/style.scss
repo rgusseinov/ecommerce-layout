@@ -50,14 +50,16 @@ body {
   }
 
   &__body {
-    height: 105px;
-    margin: 30px 0 0 0;
+    margin: 20px 0 35px 0;
     .body-wrapper {
       display: flex;
       align-items: center;
     }
     .header-logo {
       width: 165px;
+    }
+    .header-body {
+      height: 105px;     
     }
     .header-catalog {
       margin: 0 20px 0 0;
@@ -73,9 +75,6 @@ body {
         font-weight: 600;
         &__icon {
           margin: 0 5px 0 0;
-        }
-        &__label {
-
         }
       }
     }
@@ -141,10 +140,53 @@ body {
     }
     .header-shopping {
       width: 175px;
+      display: flex;
+      margin: 0 0 0 47px;
+
+      &__block {
+        margin: 0 25px 0 0;
+      }
+    }
+  }
+  &__menu {
+    background-color: #F4F7FB;
+    height: 40px;
+  }
+  .menu-header {
+    line-height: 36px;
+    &__list {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      li {
+        margin: 0 50px 0 0;
+        a {
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          color: #282739;
+        }
+      }
     }
 
+    &__menu-icon {
+      background-color: #6F73EE;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 300px;
+      &.bank {
+        margin: 0 0 0 8px;
+      }
+      &.percent {
+        background-image: url('./images/header/percentage.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 0 0 8px;        
+      }
 
+    }
   }
-
 
 }

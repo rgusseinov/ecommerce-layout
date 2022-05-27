@@ -396,8 +396,7 @@ body {
   margin: 0 0 0 8px;
 }
 .header__body {
-  height: 105px;
-  margin: 30px 0 0 0;
+  margin: 20px 0 35px 0;
 }
 .header__body .body-wrapper {
   display: flex;
@@ -405,6 +404,9 @@ body {
 }
 .header__body .header-logo {
   width: 165px;
+}
+.header__body .header-body {
+  height: 105px;
 }
 .header__body .header-catalog {
   margin: 0 20px 0 0;
@@ -478,6 +480,49 @@ body {
 }
 .header__body .header-shopping {
   width: 175px;
+  display: flex;
+  margin: 0 0 0 47px;
+}
+.header__body .header-shopping__block {
+  margin: 0 25px 0 0;
+}
+.header__menu {
+  background-color: #F4F7FB;
+  height: 40px;
+}
+.header .menu-header {
+  line-height: 36px;
+}
+.header .menu-header__list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+.header .menu-header__list li {
+  margin: 0 50px 0 0;
+}
+.header .menu-header__list li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #282739;
+}
+.header .menu-header__menu-icon {
+  background-color: #6F73EE;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 300px;
+}
+.header .menu-header__menu-icon.bank {
+  margin: 0 0 0 8px;
+}
+.header .menu-header__menu-icon.percent {
+  background-image: url("/percentage.45da28fb.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 0 8px;
 }
 
 /*# sourceMappingURL=/style.6d80b553.css.map */
