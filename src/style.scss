@@ -1,5 +1,8 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap');
+
+$main-color: #6F73EE;
+
 body {
   font-family: 'Jost', sans-serif;
 }
@@ -8,85 +11,74 @@ body {
   margin: 0 auto;
 }
 .header {
-  &__wrapper {
-    border-bottom: 2px solid #ECF3FF;
-  }
+  border-bottom: 2px solid #ECF3FF;
   &__top {
     height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // margin: 0 0 30px 0;
-    .header-top-menu {
-      display: flex;
-      &__block {  
-        margin: 0 30px 0 0;
-        a {
-          color: #5D6C7B;
-          text-decoration: none;
-          font-size: 12px;
-          line-height: 17px;        
-        }
-        .block-social {
-          img {
-            margin: 0 8px 0 0;
-          }
-        }      
+  }
+  .header-top-menu {
+    display: flex;
+    &__block {
+      margin: 0 30px 0 0;
+    }
+    a {
+        color: #5D6C7B;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 17px;        
+    }
+    .block-social {
+      img {
+        margin: 0 8px 0 0;
       }
     }
-    .header-contact {
-      display: flex;
-      flex: 0 0 150px;
+  }
+  .header-contact {
+    display: flex;
+    flex: 0 0 150px;
 
-      &__phone {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 22px;
-        color: #282739;
-      }
-      &__phone-icon {
-        margin: 0 0 0 8px;
-      }
+    &__phone {
+      font-size: 12px;
+      line-height: 22px;
+      font-weight: bold;
+      color: #282739;
+    }
+    &__phone-icon {
+      margin: 0 0 0 8px;
     }
   }
 
   &__body {
-    .body-wrapper {
+    margin: 20px 0 35px 0;
+    .wrapper {
       display: flex;
       align-items: center;
     }
     .header-logo {
       width: 165px;
     }
-    .header-body {
-      display: flex;
-      align-items: center;
-      height: 105px;
-    }
     .header-catalog {
       margin: 0 20px 0 0;
       .menu-catalog {
-        width: 114px;
-        height: 40px;
-
+        padding: 12px 15px;
         display: flex;
-        background-color: #6F73EE;
+        justify-content: center;
+        align-items: center;
+        background-color: $main-color;
         color: #fff;
         border-radius: 5px;
         font-size: 16px;
         font-weight: 600;
         &__icon {
-          margin: 0 5px 0 0;
-        }
-        &__label {
-
+          margin: 0 15px 0 0;
         }
       }
     }
     .header-search {
-      width: 603px;
       height: 40px;
-      border: 2px solid #6F73EE;
+      border: 1.5px solid $main-color;
       border-radius: 5px;
 
       .form-search {
@@ -99,7 +91,7 @@ body {
           width: 76px;
           height: 36px;
           display: flex;
-          margin: 0 0 0 2px;
+          margin: 2px 0 0 2px;
           justify-content: center;
           align-items: center;
           border-radius: 5px;
@@ -118,11 +110,11 @@ body {
         }
 
         &__input {
-          width: 523px;
           position: relative;
+          max-width: 100%;
 
           input[type="text"] {
-            width: 470px;
+            width: 485px;
             height: 36px;
             border: 0;
             outline: none;
@@ -130,12 +122,12 @@ body {
           }
           input[type="submit"] {
             position: absolute;
-            top: 0;
-            right: -2px;
+            top: -1px;
+            right: 0;
             width: 40px;
-            height: 40px;
+            height: 41px;
             border: 0;
-            background-color: #6F73EE;
+            background-color: $main-color;
             background-image: url('./images/header/search-icon.svg');
             background-repeat: no-repeat;
             background-position: center;
@@ -152,11 +144,7 @@ body {
         margin: 0 25px 0 0;
       }
     }
-
-
   }
-
-
   &__menu {
     background-color: #F4F7FB;
     height: 40px;
@@ -171,19 +159,20 @@ body {
         margin: 0 50px 0 0;
         a {
           text-decoration: none;
-          font-weight: 500;
+          font-weight: 700;
           font-size: 14px;
           line-height: 20px;
           color: #282739;
+
         }
       }
     }
 
     &__menu-icon {
-      background-color: #6F73EE;
+      background-color: $main-color;
       color: #fff;
       font-size: 12px;
-      padding: 3px 8px;
+      padding: 5px 12px;
       border-radius: 300px;
       &.bank {
         margin: 0 0 0 8px;
@@ -192,8 +181,7 @@ body {
         background-image: url('./images/header/percentage.svg');
         background-repeat: no-repeat;
         background-position: center;
-        margin: 0 0 0 8px;
-        
+        margin: 0 0 0 8px;        
       }
 
     }
