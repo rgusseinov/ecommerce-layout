@@ -354,7 +354,7 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1110px;
   margin: 0 auto;
 }
 
@@ -373,13 +373,13 @@ body {
 .header .header-top-menu__block {
   margin: 0 30px 0 0;
 }
-.header .header-top-menu a {
+.header .header-top-menu__link {
   color: #5D6C7B;
   text-decoration: none;
   font-size: 12px;
   line-height: 17px;
 }
-.header .header-top-menu .block-social img {
+.header .block-social img {
   margin: 0 8px 0 0;
 }
 .header .header-contact {
@@ -395,20 +395,21 @@ body {
 .header .header-contact__phone-icon {
   margin: 0 0 0 8px;
 }
-.header__body {
+.header__middle {
   margin: 20px 0 35px 0;
 }
-.header__body .wrapper {
+.header__middle .wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.header__body .header-logo {
+.header__middle .header-logo {
   width: 165px;
 }
-.header__body .header-catalog {
+.header__middle .header-catalog {
   margin: 0 20px 0 0;
 }
-.header__body .header-catalog .menu-catalog {
+.header__middle .menu-catalog {
   padding: 12px 15px;
   display: flex;
   justify-content: center;
@@ -419,19 +420,26 @@ body {
   font-size: 16px;
   font-weight: 600;
 }
-.header__body .header-catalog .menu-catalog__icon {
+.header__middle .menu-catalog__icon {
   margin: 0 15px 0 0;
 }
-.header__body .header-search {
+.header__middle .header-search {
   height: 40px;
   border: 1.5px solid #6F73EE;
   border-radius: 5px;
 }
-.header__body .header-search .form-search__wrapper {
+.header__middle .header-search {
+  max-width: 605px;
+}
+.header__middle .header-search .wrapper {
   display: flex;
   align-items: center;
 }
-.header__body .header-search .form-search__dropdown {
+.header__middle .form-search {
+  display: flex;
+  width: 100%;
+}
+.header__middle .search-dropdown {
   width: 76px;
   height: 36px;
   display: flex;
@@ -441,31 +449,35 @@ body {
   border-radius: 5px;
   background-color: #F4F7FB;
 }
-.header__body .header-search .form-search__dropdown .dropdown__label {
+.header__middle .search-dropdown__label {
   margin: 0 10px 0 0;
   font-size: 14px;
   color: #282739;
 }
-.header__body .header-search .form-search__dropdown .dropdown__icon {
+.header__middle .search-dropdown__icon {
   background-image: url("/arrow-down.da457463.svg");
   background-repeat: no-repeat;
   width: 8px;
   height: 7px;
 }
-.header__body .header-search .form-search__input {
+.header__middle .searchbar {
   position: relative;
   max-width: 100%;
 }
-.header__body .header-search .form-search__input input[type=text] {
+.header__middle .searchbar__input {
   width: 485px;
   height: 36px;
   border: 0;
   outline: none;
-  padding: 0 0 0 10px;
+  padding-left: 10px;
 }
-.header__body .header-search .form-search__input input[type=submit] {
+.header__middle .searchbar__input::placeholder {
+  font-size: 14px;
+  color: #5D6C7B;
+}
+.header__middle .searchbar__submit {
   position: absolute;
-  top: -1px;
+  top: 0;
   right: 0;
   width: 40px;
   height: 41px;
@@ -475,47 +487,60 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.header__body .header-shopping {
+.header__middle .header-shopping {
   width: 175px;
   display: flex;
   margin: 0 0 0 47px;
+  align-items: baseline;
 }
-.header__body .header-shopping__block {
-  margin: 0 25px 0 0;
+.header__middle .header-shopping__block {
+  margin: 0 5px 0 0;
+}
+.header__middle .header-shopping__block img {
+  padding: 0 10px 0 0;
+}
+.header__middle .header-shopping .cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 26px;
 }
 .header__menu {
+  height: 40px;
   background-color: #F4F7FB;
+}
+.header .header-menu__menu {
+  display: flex;
+  align-items: center;
   height: 40px;
 }
-.header .menu-header {
-  line-height: 36px;
-}
-.header .menu-header__list {
+.header .menu-list {
   list-style: none;
   display: flex;
   padding: 0;
 }
-.header .menu-header__list li {
-  margin: 0 50px 0 0;
+.header .menu-list li {
+  margin: 0 30px 0 0;
 }
-.header .menu-header__list li a {
+.header .menu-list__link {
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #282739;
 }
-.header .menu-header__menu-icon {
+.header .menu-list__menu-icon {
   background-color: #6F73EE;
   color: #fff;
-  font-size: 12px;
+  font-size: 10px;
   padding: 5px 12px;
   border-radius: 300px;
 }
-.header .menu-header__menu-icon.bank {
+.header .menu-list__menu-icon.bank {
   margin: 0 0 0 8px;
 }
-.header .menu-header__menu-icon.percent {
+.header .menu-list__menu-icon.percent {
   background-image: url("/percentage.45da28fb.svg");
   background-repeat: no-repeat;
   background-position: center;
