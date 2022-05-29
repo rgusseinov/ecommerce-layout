@@ -570,6 +570,7 @@ body {
   width: 255px;
   background-color: #F4F7FB;
   margin: 0 40px 0 0;
+  height: 633px;
 }
 .product .category-filters__container {
   max-width: 212px;
@@ -581,7 +582,6 @@ body {
 }
 .product .filter-block__header {
   margin-bottom: 20px;
-  font-size: 18px;
   font-weight: 600;
 }
 .product .filter-block__item {
@@ -596,6 +596,11 @@ body {
 }
 .product .filter-block__item:last-child {
   margin: 0;
+}
+.product .show-more-filters {
+  font-size: 14px;
+  color: #6F73EE;
+  text-align: center;
 }
 .product .price-range {
   margin: 0 0 17px 0;
