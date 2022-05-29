@@ -1,7 +1,10 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap');
 
-$main-color: #6F73EE;
+$main-blue-color: #6F73EE;
+$main-black-color: #282739;
+$second-color: #5D6C7B;
+$bg-color: #F4F7FB;
 
 body {
   font-family: 'Jost', sans-serif;
@@ -12,4 +15,6 @@ body {
   margin: 0 auto;
 }
 
+
 @import 'header.scss';
+@import 'products.scss';

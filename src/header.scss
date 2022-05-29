@@ -1,6 +1,6 @@
 .header {
   border-bottom: 2px solid #ECF3FF;
-
+  margin: 0 0 60px 0;
   &__top {
     height: 40px;
     display: flex;
@@ -55,7 +55,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $main-color;
+      background-color: $main-blue-color;
       color: #fff;
       border-radius: 5px;
       font-size: 16px;
@@ -66,7 +66,7 @@
     }
     .header-search {
       height: 40px;
-      border: 1.5px solid $main-color;
+      border: 1.5px solid $main-blue-color;
       border-radius: 5px;
     }
     .header-search {
@@ -88,7 +88,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 5px;
-      background-color: #F4F7FB;
+      background-color: $bg-color;
       &__label {
         margin: 0 10px 0 0;
         font-size: 14px;
@@ -123,7 +123,7 @@
         width: 40px;
         height: 41px;
         border: 0;
-        background-color: $main-color;
+        background-color: $main-blue-color;
         background-image: url('./images/header/search-icon.svg');
         background-repeat: no-repeat;
         background-position: center;
@@ -152,7 +152,7 @@
   
   &__menu {
     height: 40px;
-    background-color: #F4F7FB;
+    background-color: $bg-color;
   }
   .header-menu {
     &__menu {
@@ -176,7 +176,7 @@
       color: #282739;
     }
     &__menu-icon {
-      background-color: $main-color;
+      background-color: $main-blue-color;
       color: #fff;
       font-size: 10px;
       padding: 5px 12px;
