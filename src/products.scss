@@ -6,14 +6,14 @@
   font-size: 12px;
   align-items: center;
 }
-
 .product {
   margin-bottom: 300px;
   &__page-content {
     display: flex;
   }
   .category-filters {
-    width: 255px;
+    max-width: 255px;
+    flex: 0 0 100%;
     background-color: $bg-color;
     margin: 0 40px 0 0;
     height: 633px;
@@ -27,6 +27,7 @@
     margin: 0 0 20px 0;
     &__header {
       margin-bottom: 20px;
+      // font-size: 18px;
       font-weight: 600;
     }
     &__item {
@@ -114,7 +115,8 @@
 
   /* Body */
   .products-body {
-    width: 825px;
+    max-width: 825px;
+    flex: 0 0 825px;
   }
   .products-list {
     display: flex;
@@ -124,10 +126,14 @@
   .product-list-item {
     border: 1.5px solid #EAEBED;
     border-radius: 10px;
-    min-width: 255px;
+    max-width: 252px;
+    flex: 0 0 100%;
   }
   .product-thumbnail {
     background-color: #F0F1F5;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     &__container {
       padding: 10px;
     }
@@ -141,9 +147,10 @@
 
     &__label {
       font-size: 12px;
-      padding: 7px 10px;
+      padding: 6px 10px;
       border-radius: 5px;
       height: 15px;
+      line-height: 16px;
     }
     &__label.hit {
       background-color: #EE685F;
@@ -165,7 +172,8 @@
     }
     &__compare img {
       width: 20px;
-      height: 12px;    
+      height: 12px;
+    
     }
   }
   .product-body {
@@ -176,29 +184,22 @@
       font-weight: 700;
       margin: 0 0 20px 0;
     }
-    .product-tech-params {
-      margin-bottom: 30px;
-    }
     .params-list {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       align-items: center;
       line-height: 28px;
       &__item {
         color: #5D6C7B;
         font-size: 14px;
-        display: flex;
-        align-items: center;
-        img {
-          margin-right: 5px;
-        }
       }
     }
     .product-shopping {
       display: flex;
       justify-content: space-between;
       margin: 0 0 20px 0;
+
       .product-section-price {
         &__discount {
           color: $second-color;
@@ -215,17 +216,16 @@
       }
       .shopping-cart {
         display: flex;
-        &__icon:last-child {
-          margin-left: 10px;
-        }
         .circled {
           width: 40px;
           height: 40px;
           border-radius: 50%;
           border: 1.3px solid #EAEBED;
+          margin: 0px auto;
           display: flex;
           align-items: center;
           justify-content: center;
+          // margin: 0px auto 40px auto;
         }
       }
     }
