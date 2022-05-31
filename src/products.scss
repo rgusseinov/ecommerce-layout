@@ -27,7 +27,6 @@
     margin: 0 0 20px 0;
     &__header {
       margin-bottom: 20px;
-      // font-size: 18px;
       font-weight: 600;
     }
     &__item {
@@ -42,6 +41,36 @@
     }
     &__item:last-child {
       margin: 0;
+    }
+    .filter-checkbox {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+    .checkbox {
+      position: relative;
+      // border: 1px solid red;
+      padding: 0 0 0 15px;
+    }
+    .h-checkbox {
+      top: 0;
+      left: -5px;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+    .filter-checkbox:checked + .h-checkbox {
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      background-image: url('./images/filters/checked.svg');
+      background-repeat: no-repeat;
     }
   }
   .show-more-filters {

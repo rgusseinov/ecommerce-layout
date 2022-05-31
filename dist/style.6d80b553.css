@@ -598,6 +598,35 @@ body {
 .product .filter-block__item:last-child {
   margin: 0;
 }
+.product .filter-block .filter-checkbox {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.product .filter-block .checkbox {
+  position: relative;
+  padding: 0 0 0 15px;
+}
+.product .filter-block .h-checkbox {
+  top: 0;
+  left: -5px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.product .filter-block .filter-checkbox:checked + .h-checkbox {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  background-image: url("/checked.42a7745e.svg");
+  background-repeat: no-repeat;
+}
 .product .show-more-filters {
   font-size: 14px;
   color: #6F73EE;
