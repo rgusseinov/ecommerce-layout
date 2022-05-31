@@ -43,35 +43,39 @@
       margin: 0;
     }
     .filter-checkbox {
-      appearance: none;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-    }
-    .checkbox {
       position: relative;
-      // border: 1px solid red;
-      padding: 0 0 0 15px;
-    }
-    .h-checkbox {
-      top: 0;
-      left: -5px;
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-    }
-    .filter-checkbox:checked + .h-checkbox {
-      position: absolute;
-      top: 0;
-      left: -5px;
-      width: 16px;
-      height: 16px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      background-image: url('./images/filters/checked.svg');
-      background-repeat: no-repeat;
-    }
+      padding: 0 0 0 20px;
+      line-height: 18px;
+      
+      input:checked + .filter-checkbox__hidden {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 2px;
+        background-image: url('./images/filters/checked.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &__input {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+      }
+      &__hidden {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: 1px solid #5D6C7B;
+        border-radius: 2px;
+      }
+    }    
   }
   .show-more-filters {
     font-size: 14px;

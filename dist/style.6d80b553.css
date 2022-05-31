@@ -599,33 +599,37 @@ body {
   margin: 0;
 }
 .product .filter-block .filter-checkbox {
+  position: relative;
+  padding: 0 0 0 20px;
+  line-height: 18px;
+}
+.product .filter-block .filter-checkbox input:checked + .filter-checkbox__hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  background-image: url("/checked.42a7745e.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.product .filter-block .filter-checkbox__input {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
-.product .filter-block .checkbox {
-  position: relative;
-  padding: 0 0 0 15px;
-}
-.product .filter-block .h-checkbox {
+.product .filter-block .filter-checkbox__hidden {
   top: 0;
-  left: -5px;
+  left: 0;
   position: absolute;
   width: 16px;
   height: 16px;
   background-color: #fff;
-  border: 1px solid #ccc;
-}
-.product .filter-block .filter-checkbox:checked + .h-checkbox {
-  position: absolute;
-  top: 0;
-  left: -5px;
-  width: 16px;
-  height: 16px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  background-image: url("/checked.42a7745e.svg");
-  background-repeat: no-repeat;
+  border: 1px solid #5D6C7B;
+  border-radius: 2px;
 }
 .product .show-more-filters {
   font-size: 14px;
