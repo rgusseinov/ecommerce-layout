@@ -11,12 +11,46 @@
   &__page-content {
     display: flex;
   }
+  /* Sort by Section */
+  &__sortby-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 40px 0;
+    .label {
+      font-size: 25px;
+      color: $main-black-color;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+  .sortby-controls {
+    display: flex;
+    align-items: center;
+    &__label {
+      color: $main-black-color;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 20px;
+    }
+    &__price {
+      padding: 10px 10px;
+      margin-right: 20px;
+    }
+    &__params {
+      padding: 10px 15px;
+    }
+    img {
+     margin-left: 15px; 
+    }
+  }
+
+  // Sidebar filter Section
   .category-filters {
     max-width: 255px;
     flex: 0 0 100%;
     background-color: $bg-color;
     margin: 0 40px 0 0;
-    height: 633px;
+    height: 590px;
     &__container {
       max-width: 212px;
       margin: 0 auto;
@@ -43,34 +77,38 @@
       margin: 0;
     }
     .filter-checkbox {
-      appearance: none;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-    }
-    .checkbox {
       position: relative;
-      // border: 1px solid red;
-      padding: 0 0 0 15px;
-    }
-    .h-checkbox {
-      top: 0;
-      left: -5px;
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-    }
-    .filter-checkbox:checked + .h-checkbox {
-      position: absolute;
-      top: 0;
-      left: -5px;
-      width: 16px;
-      height: 16px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      background-image: url('./images/filters/checked.svg');
-      background-repeat: no-repeat;
+      padding: 0 0 0 20px;
+      line-height: 18px;
+      
+      input:checked + .filter-checkbox__hidden {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 2px;
+        background-image: url('./images/filters/checked.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &__input {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+      }
+      &__hidden {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: 1px solid #5D6C7B;
+        border-radius: 2px;
+      }
     }
   }
   .show-more-filters {
@@ -104,65 +142,26 @@
       border: 0;
     }    
   }
-  
-  /* Sort by */
-  &__sortby-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 0 40px 0;
-  }
-  .label {
-    font-size: 25px;
-    color: $main-black-color;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .sortby-controls {
-    display: flex;
-    align-items: center;
 
-    &__label {
-      color: $main-black-color;
-      font-size: 14px;
-      font-weight: 600;
-      margin-right: 20px;
-    }
-    &__price {
-      padding: 10px 10px;
-      margin-right: 20px;
-    }
-    &__params {
-      padding: 10px 15px;
-    }
-    img {
-     margin-left: 15px; 
-    }
-  }
-
-  /* Filters */
-
-
-  /* Body */
+  /* Product Body section */
   .products-body {
     max-width: 825px;
     flex: 0 0 825px;
   }
   .products-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 30px;
   }
   .product-list-item {
     border: 1.5px solid #EAEBED;
     border-radius: 10px;
     max-width: 252px;
+    margin: 0 20px 0 0;
     flex: 0 0 100%;
   }
   .product-thumbnail {
     background-color: #F0F1F5;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     &__container {
       padding: 10px;
     }
@@ -254,7 +253,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          // margin: 0px auto 40px auto;
         }
       }
     }

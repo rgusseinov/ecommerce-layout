@@ -121,6 +121,7 @@
 				</div>
 			</div>
 
+			<!-- Page content with products  -->
 			<section class="product__page-content">
 				<div class="product__category-filters category-filters">
 					<div class="category-filters__container">
@@ -143,21 +144,21 @@
 							<div class="filter-block__header">Тип</div>
 							<div class="filter-block__body">
 								<div class="filter-block__item">
-									<label class="checkbox">
-										<input type="checkbox" class="filter-checkbox" /> Внедорожный
-										<div class="h-checkbox"></div>
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" /> Внедорожный
+										<div class="filter-checkbox__hidden"></div>
 									</label>
 								</div>
 								<div class="filter-block__item">
-									<label class="checkbox">
-										<input type="checkbox" class="filter-checkbox" /> Городской
-										<div class="h-checkbox"></div>
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" /> Городской
+										<div class="filter-checkbox__hidden"></div>
 									</label>
 								</div>
 								<div class="filter-block__item">
-									<label class="checkbox">
-										<input type="checkbox" class="filter-checkbox" /> Зимний
-										<div class="h-checkbox"></div>
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" /> Зимний
+										<div class="filter-checkbox__hidden"></div>
 									</label>
 								</div>								
 							</div>
@@ -167,13 +168,22 @@
 							<div class="filter-block__header">Для кого</div>
 							<div class="filter-block__body">
 								<div class="filter-block__item">
-									<input type="checkbox" class="filter fiter-person" /> Для взрослого
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" /> Для взрослого
+										<div class="filter-checkbox__hidden"></div>
+									</label>
 								</div>
 								<div class="filter-block__item">
-									<input type="checkbox" class="filter fiter-person" /> Для ребенка
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" />  Для ребенка
+										<div class="filter-checkbox__hidden"></div>
+									</label>
 								</div>
 								<div class="filter-block__item">
-									<input type="checkbox" class="filter fiter-person" /> Для пенcионера
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" />  Для пенcионера
+										<div class="filter-checkbox__hidden"></div>
+									</label>
 								</div>								
 							</div>
 						</div>
@@ -182,14 +192,23 @@
 							<div class="filter-block__header">Вес</div>
 							<div class="filter-block__body">
 								<div class="filter-block__item">
-									<input type="checkbox" class="filter fiter-weight" /> Легкие (до 15 кг)
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" />  Легкие (до 15 кг)
+										<div class="filter-checkbox__hidden"></div>
+									</label>
 								</div>
 								<div class="filter-block__item">
-									<input type="checkbox" class="filter fiter-weight" /> Средние (15-30 кг)
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" />  Средние (15-30 кг)
+										<div class="filter-checkbox__hidden"></div>
+									</label>
 								</div>
 								<div class="filter-block__item">
-									<input type="checkbox" class="filter fiter-weight" /> Тяжелые (свыше 30 кг)
-								</div>								
+									<label class="filter-checkbox">
+										<input type="checkbox" class="filter-checkbox__input" />  Тяжелые (свыше 30 кг)
+										<div class="filter-checkbox__hidden"></div>
+									</label>
+								</div>				
 							</div>
 						</div>
 						<div class="filter-block show-more-filters">
@@ -444,7 +463,66 @@
 										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
 									</div>
 								</div>
-							</div>
+							</div>							
+						</div>				
+						<div class="products-list__item product-list-item">
+							<div class="product-list-item__thumbnail product-thumbnail">
+								<div class="product-thumbnail__container">
+									<div class="product-thumbnail__marketing product-marketing">
+										<div class="product-marketing__label hit">Хит</div>
+										<div class="product-marketing__compare">
+											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
+										</div>
+									</div>								
+									<div class="product-thumbnail__image">
+										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
+									</div>
+								</div>
+							</div>							
+							<div class="product-list-item__body product-body">
+								<div class="product-body__container">
+									<div class="product-body__block product-title">Kugoo Kirin M4</div>
+									<div class="product-body__block product-tech-params">
+										<div class="product-tech-params__list params-list">
+											<div class="params-list__item">
+												<img src="./src/images/main/product-item/capacity.svg" alt="kugoo"/>
+												2000 mAh
+											</div>
+											<div class="params-list__item">
+												<img src="./src/images/main/product-item/power.svg" alt="kugoo"/>
+												1,2 л.с.
+											</div>
+										</div>
+										<div class="product-tech-params__list params-list">
+											<div class="params-list__item">
+												<img src="./src/images/main/product-item/speed.svg" alt="kugoo"/>
+												60 км/ч
+											</div>
+											<div class="params-list__item">
+												<img src="./src/images/main/product-item/timer.svg" alt="kugoo"/>
+												5 часов
+											</div>
+										</div>
+									</div>
+									<div class="product-body__block product-shopping">
+										<div class="product-shopping__price product-section-price">
+											<div class="product-section-price__discount">39 900 ₽</div>
+											<div class="product-section-price__current">29 900 ₽</div>
+										</div>
+										<div class="product-shopping__buy shopping-cart">
+											<div class="shopping-cart__icon circled">											
+												<img src="./src/images/main/product-item/shopping-cart2.svg" alt="kugoo"/>
+											</div>
+											<div class="shopping-cart__icon circled">
+												<img src="./src/images/main/product-item/fav.svg" alt="kugoo"/>
+											</div>
+										</div>
+									</div>
+									<div class="product-body__block">
+										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
+									</div>
+								</div>
+							</div>							
 						</div>				
 						</div>
 
