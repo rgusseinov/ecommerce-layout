@@ -104,432 +104,65 @@
 			</div>
 		</div> <!-- header menu -->
 	</header>
-	<main class="product">
+	
+	<!-- Product page -->
+	<main class="product-page">
 		<div class="container">
-			<div class="product__sortby-header sortby-header">
-				<div class="sortby-header__block label">Фильтр</div>
-				<div class="sortby-header__block sortby-controls">
-					<div class="sortby-controls__label">Сортировать:</div>
-					<div class="sortby-controls__price sort-btn sortby-price">
-						По цене
-						<img src="./src/images/main/product-item/arrow-down.svg" alt="По цене" />
-					</div>
-					<div class="sortby-controls__params sortby-params sort-btn">
-						По дальности хода
-						<img src="./src/images/main/product-item/arrow-down.svg" alt="По дальности хода" />
-					</div>
-				</div>
-			</div>
-
-			<!-- Page content with products  -->
-			<section class="product__page-content">
-				<div class="product__category-filters category-filters">
-					<div class="category-filters__container">
-
-						<div class="filter-block filter-price">
-							<div class="filter-block__header">Цена</div>
-							<div class="filter-block__body">
-								<div class="filter-block__price-range price-range">
-									<img src="./src/images/main/product-item/price-range.svg" alt="price-range"/>
-								</div>
-								<div class="filter-block__price-input price-input">
-									<input type="text" class="price-input__from"/>	
-									<img src="./src/images/main/product-item/price-dash.svg" alt="price-dash" />
-									<input type="text" class="price-input__to"/>
+			<div class="product-page__gallery"></div>
+			<div class="product-page__info product-info">
+				<div class="product-info__container">
+					<div class="product-info__basic-info product-basic">
+						<div class="product-basic__title">
+							<h1>Kugoo Kirin M4</h1>
+						</div>
+						<div class="product-basic__subtitle product-subtitle">
+							<div class="product-subtitle__item">Просмотров 350</div>
+							<div class="product-subtitle__item">Купили 196 раз</div>
+							<div class="product-subtitle__item">Артикул: 2200000000026</div>
+						</div>
+						<div class="product-basic__price product-price">
+							<div class="product-price__block price-block">
+								<span>39 900 ₽</span>
+								29 900 ₽
+							</div>
+							<div class="product-price__block price-block">
+								<div class="price-block__wrapper">
+									<div class="price-block__icon"></div>
+									<div class="price-block__info">
+										<span>Рассрочка:</span>
+										1 760 ₽ в месяц / 24 месяца
+									</div>
 								</div>
 							</div>
 						</div>
+					</div>
 
-						<div class="filter-block filter-type">
-							<div class="filter-block__header">Тип</div>
-							<div class="filter-block__body">
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" /> Внедорожный
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" /> Городской
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" /> Зимний
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>								
+					<div class="product-info__equipment product-equipment">
+						<div class="product-equipment__title">Комплектация</div>
+						<div class="product-equipment__body">
+							<div class="product-equipment__container">
+								<div class="product-equipment__equipment-type equipment-type basic">Базовая</div>
+								<div class="product-equipment__equipment-type equipment-type max">Версия MAX</div>
+								<div class="product-equipment__equipment-type equipment-type vip">VIP-версия</div>
 							</div>
 						</div>
-
-						<div class="filter-block filter-person">
-							<div class="filter-block__header">Для кого</div>
-							<div class="filter-block__body">
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" /> Для взрослого
-										<div class="filter-checkbox__hidden"></div>
-									</label>
+						<div class="product-equipment__footer equipment-footer">
+							<div class="equipment-footer__label">Покрышки</div>
+							<div class="equipment-footer__content equipment-footer-content">
+								<div class="equipment-footer-content__block">
+									<div class="">Внедорожная шипованная</div>
+									<div class="">+ установка (с доп.комплектом базовых покрышек)</div>
 								</div>
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" />  Для ребенка
-										<div class="filter-checkbox__hidden"></div>
-									</label>
+								<div class="equipment-footer-content__block">
+									<div class="">Изменить</div>
 								</div>
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" />  Для пенcионера
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>								
+								<div class="equipment-footer__bottom">7600 руб.</div>
 							</div>
 						</div>
 						
-						<div class="filter-block filter-weight">
-							<div class="filter-block__header">Вес</div>
-							<div class="filter-block__body">
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" />  Легкие (до 15 кг)
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" />  Средние (15-30 кг)
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>
-								<div class="filter-block__item">
-									<label class="filter-checkbox">
-										<input type="checkbox" class="filter-checkbox__input" />  Тяжелые (свыше 30 кг)
-										<div class="filter-checkbox__hidden"></div>
-									</label>
-								</div>				
-							</div>
-						</div>
-						<div class="filter-block show-more-filters">
-							Показать весь фильтр
-							<img src="./src/images/main/product-item/arrow-down.svg" alt="Вниз" />
-						</div>
 					</div>
 				</div>
-				<!-- category-filters -->
-
-				<div class="product__products-body products-body">
-					<div class="products-body__list products-list">
-
-						<div class="products-list__item product-list-item">
-							<div class="product-list-item__thumbnail product-thumbnail">
-								<div class="product-thumbnail__container">
-									<div class="product-thumbnail__marketing product-marketing">
-										<div class="product-marketing__label hit">Хит</div>
-										<div class="product-marketing__compare">
-											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
-										</div>
-									</div>								
-									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
-									</div>
-								</div>
-							</div>							
-							<div class="product-list-item__body product-body">
-								<div class="product-body__container">
-									<div class="product-body__block product-title">Kugoo Kirin M4</div>
-									<div class="product-body__block product-tech-params">
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/capacity.svg" alt="kugoo"/>
-												2000 mAh
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/power.svg" alt="kugoo"/>
-												1,2 л.с.
-											</div>
-										</div>
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/speed.svg" alt="kugoo"/>
-												60 км/ч
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/timer.svg" alt="kugoo"/>
-												5 часов
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block product-shopping">
-										<div class="product-shopping__price product-section-price">
-											<div class="product-section-price__discount">39 900 ₽</div>
-											<div class="product-section-price__current">29 900 ₽</div>
-										</div>
-										<div class="product-shopping__buy shopping-cart">
-											<div class="shopping-cart__icon circled">											
-												<img src="./src/images/main/product-item/shopping-cart2.svg" alt="kugoo"/>
-											</div>
-											<div class="shopping-cart__icon circled">
-												<img src="./src/images/main/product-item/fav.svg" alt="kugoo"/>
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block">
-										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="products-list__item product-list-item">
-							<div class="product-list-item__thumbnail product-thumbnail">
-								<div class="product-thumbnail__container">
-									<div class="product-thumbnail__marketing product-marketing">
-										<div class="product-marketing__label hit">Хит</div>
-										<div class="product-marketing__compare">
-											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
-										</div>
-									</div>								
-									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
-									</div>
-								</div>
-							</div>							
-							<div class="product-list-item__body product-body">
-								<div class="product-body__container">
-									<div class="product-body__block product-title">Kugoo Kirin M4</div>
-									<div class="product-body__block product-tech-params">
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/capacity.svg" alt="kugoo"/>
-												2000 mAh
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/power.svg" alt="kugoo"/>
-												1,2 л.с.
-											</div>
-										</div>
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/speed.svg" alt="kugoo"/>
-												60 км/ч
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/timer.svg" alt="kugoo"/>
-												5 часов
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block product-shopping">
-										<div class="product-shopping__price product-section-price">
-											<div class="product-section-price__discount">39 900 ₽</div>
-											<div class="product-section-price__current">29 900 ₽</div>
-										</div>
-										<div class="product-shopping__buy shopping-cart">
-											<div class="shopping-cart__icon circled">											
-												<img src="./src/images/main/product-item/shopping-cart2.svg" alt="kugoo"/>
-											</div>
-											<div class="shopping-cart__icon circled">
-												<img src="./src/images/main/product-item/fav.svg" alt="kugoo"/>
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block">
-										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="products-list__item product-list-item">
-							<div class="product-list-item__thumbnail product-thumbnail">
-								<div class="product-thumbnail__container">
-									<div class="product-thumbnail__marketing product-marketing">
-										<div class="product-marketing__label new">Новинка</div>
-										<div class="product-marketing__compare">
-											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
-										</div>
-									</div>								
-									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
-									</div>
-								</div>
-							</div>							
-							<div class="product-list-item__body product-body">
-								<div class="product-body__container">
-									<div class="product-body__block product-title">Kugoo Kirin M4</div>
-									<div class="product-body__block product-tech-params">
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/capacity.svg" alt="kugoo"/>
-												2000 mAh
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/power.svg" alt="kugoo"/>
-												1,2 л.с.
-											</div>
-										</div>
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/speed.svg" alt="kugoo"/>
-												60 км/ч
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/timer.svg" alt="kugoo"/>
-												5 часов
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block product-shopping">
-										<div class="product-shopping__price product-section-price">
-											<div class="product-section-price__discount">39 900 ₽</div>
-											<div class="product-section-price__current">29 900 ₽</div>
-										</div>
-										<div class="product-shopping__buy shopping-cart">
-											<div class="shopping-cart__icon circled">											
-												<img src="./src/images/main/product-item/shopping-cart2.svg" alt="kugoo"/>
-											</div>
-											<div class="shopping-cart__icon circled">
-												<img src="./src/images/main/product-item/fav.svg" alt="kugoo"/>
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block">
-										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="products-body__list products-list">
-
-						<div class="products-list__item product-list-item">
-							<div class="product-list-item__thumbnail product-thumbnail">
-								<div class="product-thumbnail__container">
-									<div class="product-thumbnail__marketing product-marketing">
-										<div class="product-marketing__label hit">Хит</div>
-										<div class="product-marketing__compare">
-											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
-										</div>
-									</div>								
-									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
-									</div>
-								</div>
-							</div>							
-							<div class="product-list-item__body product-body">
-								<div class="product-body__container">
-									<div class="product-body__block product-title">Kugoo Kirin M4</div>
-									<div class="product-body__block product-tech-params">
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/capacity.svg" alt="kugoo"/>
-												2000 mAh
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/power.svg" alt="kugoo"/>
-												1,2 л.с.
-											</div>
-										</div>
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/speed.svg" alt="kugoo"/>
-												60 км/ч
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/timer.svg" alt="kugoo"/>
-												5 часов
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block product-shopping">
-										<div class="product-shopping__price product-section-price">
-											<div class="product-section-price__discount">39 900 ₽</div>
-											<div class="product-section-price__current">29 900 ₽</div>
-										</div>
-										<div class="product-shopping__buy shopping-cart">
-											<div class="shopping-cart__icon circled">											
-												<img src="./src/images/main/product-item/shopping-cart2.svg" alt="kugoo"/>
-											</div>
-											<div class="shopping-cart__icon circled">
-												<img src="./src/images/main/product-item/fav.svg" alt="kugoo"/>
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block">
-										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
-									</div>
-								</div>
-							</div>							
-						</div>				
-						<div class="products-list__item product-list-item">
-							<div class="product-list-item__thumbnail product-thumbnail">
-								<div class="product-thumbnail__container">
-									<div class="product-thumbnail__marketing product-marketing">
-										<div class="product-marketing__label hit">Хит</div>
-										<div class="product-marketing__compare">
-											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
-										</div>
-									</div>								
-									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
-									</div>
-								</div>
-							</div>							
-							<div class="product-list-item__body product-body">
-								<div class="product-body__container">
-									<div class="product-body__block product-title">Kugoo Kirin M4</div>
-									<div class="product-body__block product-tech-params">
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/capacity.svg" alt="kugoo"/>
-												2000 mAh
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/power.svg" alt="kugoo"/>
-												1,2 л.с.
-											</div>
-										</div>
-										<div class="product-tech-params__list params-list">
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/speed.svg" alt="kugoo"/>
-												60 км/ч
-											</div>
-											<div class="params-list__item">
-												<img src="./src/images/main/product-item/timer.svg" alt="kugoo"/>
-												5 часов
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block product-shopping">
-										<div class="product-shopping__price product-section-price">
-											<div class="product-section-price__discount">39 900 ₽</div>
-											<div class="product-section-price__current">29 900 ₽</div>
-										</div>
-										<div class="product-shopping__buy shopping-cart">
-											<div class="shopping-cart__icon circled">											
-												<img src="./src/images/main/product-item/shopping-cart2.svg" alt="kugoo"/>
-											</div>
-											<div class="shopping-cart__icon circled">
-												<img src="./src/images/main/product-item/fav.svg" alt="kugoo"/>
-											</div>
-										</div>
-									</div>
-									<div class="product-body__block">
-										<input type="button" class="buy-oneclick" value="Купить в 1 клик"/>
-									</div>
-								</div>
-							</div>							
-						</div>				
-						</div>
-
-					</div>
-
-				</div>
-			</section>
+			</div>
 		</div>
 	</main>
 </body>
