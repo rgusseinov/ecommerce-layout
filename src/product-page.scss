@@ -1,6 +1,9 @@
 .product-page {
 
   &__wrapper {
+    // display: flex;
+  }
+  .column-content {
     display: flex;
   }
   .product-gallery {
@@ -24,7 +27,7 @@
       border: 2px solid #6F73EE;
       border-radius: 5px;
     }
-  }
+  } 
 
   // Product page info
   .product-info {
@@ -296,7 +299,7 @@
     width: 47%;
     padding: 30px 0;
     border: 1.5px solid #EAEBED;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
 
     &__label {
@@ -308,7 +311,7 @@
       line-height: 20px;
       text-align: center;
       color: #5D6C7B;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     &.selected {
       border: 1.5px solid $main-blue-color;

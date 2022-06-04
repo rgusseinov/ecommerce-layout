@@ -348,7 +348,7 @@ template {
   display: none;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap");
 body {
   font-family: "Jost", sans-serif;
 }
@@ -358,9 +358,35 @@ body {
   margin: 0 auto;
 }
 
+ol.breadscrumb__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+ol.breadscrumb__list li {
+  margin: 0 10px 0 0;
+  color: #5D6C7B;
+}
+ol.breadscrumb__list li.active {
+  color: #282739;
+}
+ol.breadscrumb__list li:first-child:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url("/home.09a1f254.svg");
+  background-repeat: no-repeat;
+  margin: 0 10px 0 0;
+  padding: 0 0 0 15px;
+}
+ol.breadscrumb__list li:before {
+  content: "/";
+  padding: 0 10px 0 0;
+}
+
 .header {
   border-bottom: 2px solid #ECF3FF;
-  margin: 0 0 60px 0;
+  margin: 0 0 25px 0;
 }
 .header__top {
   height: 40px;
@@ -478,11 +504,12 @@ body {
 }
 .header__middle .searchbar__submit {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 41px;
+  top: -1px;
+  right: -2px;
+  width: 42px;
+  height: 42px;
   border: 0;
+  border-radius: 5px;
   background-color: #6F73EE;
   background-image: url("/search-icon.4a12f8e0.svg");
   background-repeat: no-repeat;
@@ -526,8 +553,9 @@ body {
 }
 .header .menu-list__link {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
+  font-size: normal;
   line-height: 20px;
   color: #282739;
 }
@@ -535,7 +563,7 @@ body {
   background-color: #6F73EE;
   color: #fff;
   font-size: 10px;
-  padding: 5px 12px;
+  padding: 5px 7px;
   border-radius: 300px;
 }
 .header .menu-list__menu-icon.bank {
@@ -546,6 +574,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 0 0 8px;
+  padding: 5px 10px;
 }
 
 .sort-btn {
@@ -808,7 +837,7 @@ body {
   width: 100%;
 }
 
-.product-page__wrapper {
+.product-page .column-content {
   display: flex;
 }
 .product-page .product-gallery {
@@ -1083,7 +1112,7 @@ body {
   width: 47%;
   padding: 30px 0;
   border: 1.5px solid #EAEBED;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
 }
 .product-page .product-box__label {
@@ -1095,7 +1124,7 @@ body {
   line-height: 20px;
   text-align: center;
   color: #5D6C7B;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .product-page .product-box.selected {
   border: 1.5px solid #6F73EE;
