@@ -27,6 +27,11 @@
   }
 
   // Product page info
+  .product-info {
+    &__container {
+      max-width: 475px;
+    }
+  }
   .product-basic {
     &__title h1 {
       margin: 0 0 15px 0;
@@ -96,7 +101,6 @@
           line-height: 17px;          
           color: #5D6C7B;          
         }
-        /* 14 px (medium) */
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
@@ -122,9 +126,6 @@
       img {
         padding-left: 10px;
       }
-    }
-    &__body {
-      // display: flex;
     }
     &__row {
       display: flex;
@@ -172,10 +173,12 @@
     }
   }
   .gift-section {
+    margin: 0 0 20px 0;
     &__header {
       display: flex;
       justify-content: space-between;
       font-weight: 700;
+      margin: 0 0 25px 0;
     }
     &__right-block {
       font-weight: 400;
@@ -190,7 +193,7 @@
     }
     &__body {
       background-color: $bg-color;
-      border-radius: 5px;
+      border-radius: 10px;
       padding: 25px 20px;
     }
     .gift-box {
@@ -206,29 +209,97 @@
     }
     .gift-block {
       display: flex;
+      font-size: 12px;
       img {
         padding-right: 15px;
+        width: 46px;
       }
     }
   }
+  .product-color-section {
+    margin: 0 0 30px 0;
+  }
+  .shopping {
+    background-color: $bg-color;
+    &__container {
+      padding: 40px 30px;
+    }
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0 25px 0;
+      border-bottom: 1px solid #EAEBED;
+    }
+    &__title {
+      font-size: 35px;
+      font-weight: 700;
+      color: #282739;
+    }
+    &__right-block {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.3px solid #EAEBED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__middle {
+      padding: 35px 0 0 0;
+      display: flex;
+    }
+
+    .shopping-text {
+      margin: 0 0 30px 0;
+      &__title {
+        font-weight: 700;
+      }
+      padding: 0 0 0 10px;
+    }
+    .shopping-cta {
+      display: flex;
+      justify-content: space-between;
+      max-width: 414px;
+    }
+    .btn {
+      padding: 20px 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .btn-bordered {
+      border: 1px solid $main-blue-color;
+      background-color: #F4F7FB;
+      color: $main-blue-color;
+      font-weight: 500;
+      width: 48%;
+    }
+    .btn-primary {
+      width: 48%;
+      background-color: $main-blue-color;
+      color: #fff;
+      font-weight: 500; 
+    }
+    &__footer {
+      text-align: center;
+      color: #6F73EE;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+  }
+
   .product-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    &__wrapper {
-      // margin: auto 0;
-      // border: 1px solid red;
-      // display: inline;
-      // flex-direction: column;
-    }
-    padding: 32px 35px;
+    
+    width: 47%;
+    padding: 30px 0;
     border: 1.5px solid #EAEBED;
     border-radius: 5px;
-    max-width: 227px;
-    flex: 0 0 227px;
     text-align: center;
+
     &__label {
-      // display: inline-block;
       font-weight: 700;
       margin-bottom: 15px;
     }
