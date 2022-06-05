@@ -1,8 +1,4 @@
 .product-page {
-
-  &__wrapper {
-    // display: flex;
-  }
   .column-content {
     display: flex;
   }
@@ -27,8 +23,7 @@
       border: 2px solid #6F73EE;
       border-radius: 5px;
     }
-  } 
-
+  }
   // Product page info
   .product-info {
     &__container {
@@ -37,10 +32,10 @@
   }
   .product-basic {
     &__title h1 {
+      padding: 0;
       margin: 0 0 15px 0;
       font-weight: 600;
-      font-size: 35px;
-      line-height: 51px;      
+      font-size: 35px; 
       text-transform: uppercase;
     }
     .product-subtitle {
@@ -50,6 +45,9 @@
         display: flex;
         justify-content: space-between;
         margin: 0 0 25px 0;
+      }
+      &__row:last-child {
+        margin-bottom: 32px;
       }
       &__item {
         margin: 0 20px 0 0;
@@ -96,6 +94,12 @@
         margin: 0 10px 0 0;
       }
       &__info {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #282739;
+
         span {
           font-family: 'Jost';
           font-style: normal;
@@ -104,19 +108,12 @@
           line-height: 17px;          
           color: #5D6C7B;          
         }
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 20px;
-        color: #282739;
       }
     }
     .price-block-bg {
       background-color: $bg-color;
     }
   }
-
-
   .info-section {
     &__title {
       font-weight: 700;
@@ -149,6 +146,7 @@
       font-size: 14px;
       line-height: 20px;
       color: #5D6C7B;
+      margin-bottom: 10px;
     }
     .subsection-content {
       display: flex;
@@ -157,14 +155,17 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;
-        color: #282739;
+        color: #282739;        
       }
       &__secondary-title {
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
         color: #282739;
-
+        margin-bottom: 10px;
+      }
+      &__sub {
+        font-weight: 600;
       }
     }
     .settings a {

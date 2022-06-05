@@ -866,10 +866,10 @@ ol.breadscrumb__list li:before {
   max-width: 475px;
 }
 .product-page .product-basic__title h1 {
+  padding: 0;
   margin: 0 0 15px 0;
   font-weight: 600;
   font-size: 35px;
-  line-height: 51px;
   text-transform: uppercase;
 }
 .product-page .product-basic .product-subtitle {
@@ -880,6 +880,9 @@ ol.breadscrumb__list li:before {
   display: flex;
   justify-content: space-between;
   margin: 0 0 25px 0;
+}
+.product-page .product-basic .product-subtitle__row:last-child {
+  margin-bottom: 32px;
 }
 .product-page .product-basic .product-subtitle__item {
   margin: 0 20px 0 0;
@@ -969,6 +972,7 @@ ol.breadscrumb__list li:before {
   font-size: 14px;
   line-height: 20px;
   color: #5D6C7B;
+  margin-bottom: 10px;
 }
 .product-page .info-subsection .subsection-content {
   display: flex;
@@ -985,6 +989,10 @@ ol.breadscrumb__list li:before {
   font-size: 14px;
   line-height: 20px;
   color: #282739;
+  margin-bottom: 10px;
+}
+.product-page .info-subsection .subsection-content__sub {
+  font-weight: 600;
 }
 .product-page .info-subsection .settings a {
   font-weight: 500;
@@ -1128,6 +1136,55 @@ ol.breadscrumb__list li:before {
 }
 .product-page .product-box.selected {
   border: 1.5px solid #6F73EE;
+}
+
+.shopping-cart__header {
+  margin: 65px 0 50px 0;
+}
+.shopping-cart__title {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 51px;
+  text-transform: uppercase;
+  color: #282739;
+}
+.shopping-cart__body {
+  background-color: #F4F7FB;
+  border-radius: 10px;
+}
+.shopping-cart__container {
+  display: flex;
+  justify-content: center;
+}
+.shopping-cart__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 47px 0;
+  height: 230px;
+  justify-content: space-between;
+}
+.shopping-cart .shopping-cart-body__label {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #282739;
+}
+.shopping-cart .shopping-cart-body__sublabel {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #282739;
+}
+.shopping-cart .shopping-cart-body__btn-catalog {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background: #6F73EE;
+  border: 1.3px solid #6F73EE;
+  border-radius: 5px;
+  padding: 13px 20px;
 }
 
 /*# sourceMappingURL=/style.6d80b553.css.map */
