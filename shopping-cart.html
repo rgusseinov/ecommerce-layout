@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kugoo</title>
+	<link rel="stylesheet" href="./src/style.scss"/>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__top">
+				<div class="header__column header-top">
+					<div class="header-top-menu">
+						<div class="header-top-menu__block">
+							<a href="#" class="header-top-menu__link">Сервис</a>
+						</div>
+						<div class="header-top-menu__block">
+							<a href="#" class="header-top-menu__link">Сотрудничество</a>
+						</div>
+						<div class="header-top-menu__block">
+							<a href="#" class="header-top-menu__link">Заказать зконок</a>
+						</div>
+						<div class="header-top-menu__block block-social">
+							<a href="#" class="block-social viber"><img src="./src/images/header/viber.svg" /></a>
+							<a href="#" class="block-social whatsapp"><img src="./src/images/header/whatsapp.svg" /></a>
+							<a href="#" class="block-social telegram"><img src="./src/images/header/telegram.svg" /></a>								
+						</div>
+					</div>
+				</div>
+				<div class="header__column header-contact">
+					<div class="header-contact__phone">+7 (800) 505-54-61</div>
+					<div class="header-contact__phone-icon"><img src="./src/images/header/plus-call.svg" /></div>
+				</div>
+			</div>
+		</div>
+		<div class="header__middle header-middle">
+			<div class="container">
+				<div class="wrapper">
+
+					<div class="header-middle__column header-logo">
+						<div class="header__logo">
+							<img src="./src/images/header/logo.svg" alt="Kugoo" class="logo" />
+						</div>
+					</div>
+
+					<div class="header-middle__column header-catalog">
+						<div class="menu-catalog">
+							<div class="menu-catalog__icon">
+								<img src="./src/images/header/catalog-icon.svg" alt="catalog" />
+							</div>
+							<div class="menu-catalog__label">Каталог</div>
+						</div>
+					</div>
+
+					<div class="header-middle__column header-search">
+						<div class="wrapper">
+							<form action="" class="form-search">
+								<div class="form-search__dropdown search-dropdown">
+									<div class="search-dropdown__label">Везде</div>
+									<div class="search-dropdown__icon down"></div>
+								</div>
+								<div class="form-search__searchbar searchbar">
+									<input type="text" class="searchbar__input" placeholder="Искать самокат KUGO"/>
+									<input type="submit" class="searchbar__submit" value=""/>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="header-middle__column header-shopping">
+						<div class="header-shopping__block compare"><img src="./src/images/header/compare.svg" alt="compare" /></div>
+						<div class="header-shopping__block favourite"><img src="./src/images/header/fav.svg" alt="fav" /></div>
+						<div class="header-shopping__block cart">
+							<img src="./src/images/header/shopping-cart.svg" alt="shopping-cart" />Корзина
+						</div>						
+					</div>
+					
+				</div>
+			</div>	
+		</div> <!-- header middle -->
+
+		<div class="header__menu header-menu">
+			<div class="wrapper">
+				<div class="container">
+					<nav class="header-menu__menu">
+						<ul class="header-menu__list menu-list">
+							<li><a href="#" class="menu-list__link">О Магазине</a></li>
+							<li>
+								<a href="#" class="menu-list__link">Доставка и оплата</a>
+								<span class="menu-list__menu-icon bank">Доступна рассрочка</span>
+							</li>
+							<li><a href="#" class="menu-list__link">Тест-драйв</a></li>
+							<li><a href="#" class="menu-list__link">Блог</a></li>
+							<li><a href="#" class="menu-list__link">Контакты</a></li>
+							<li>
+								<a href="#" class="menu-list__link">Акции</a>
+								<span class="menu-list__menu-icon percent"></span>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div> <!-- header menu -->
+	</header>
+	
+	<!-- Product page -->
+	<main class="shopping-cart">
+	  <div class="container">			
+			<div class="shopping-cart__breadcrumb">
+				<ol class="breadscrumb__list">
+					<li class="breadscrumb__item">Главная</li>
+					<li class="breadscrumb__item">Каталог</li>
+					<li class="breadscrumb__item active">Моя карзина</li>
+				</ol>
+			</div>
+			<div class="shopping-cart__header shopping-cart-header">
+				<h1 class="shopping-cart__title">Моя корзина</h1>
+			</div>
+			<div class="shopping-cart__body shopping-cart-body">
+				<div class="shopping-cart__container">
+					<div class="shopping-cart__column">
+						<div class="shopping-cart-body__image"><img src="./src/images/shopping-cart/empty-cart.svg" alt=""></div>
+						<div class="shopping-cart-body__label">Ваша корзина пуста</div>
+						<div class="shopping-cart-body__sublabel">Добавьте в нее товары из каталога</div>
+						<a href="/index.html" class="shopping-cart-body__btn-catalog btn">Перейти в каталог</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+</body>
+</html>

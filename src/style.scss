@@ -3,42 +3,10 @@
 
 $main-blue-color: #6F73EE;
 $main-black-color: #282739;
-$second-color: #5D6C7B;
+$second-color: hsl(210, 14%, 42%);
 $bg-color: #F4F7FB;
 
-body {
-  font-family: 'Jost', sans-serif;
-}
-.container {
-  max-width: 1110px;
-  margin: 0 auto;
-}
-ol.breadscrumb__list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  li {
-    margin: 0 10px 0 0;
-    color: #5D6C7B;
-  }
-  li.active {
-    color: #282739;
-  }
-  li:first-child:before {
-    content: '';
-    width: 15px;
-    height: 15px;
-    background-image: url('./images/home.svg');
-    background-repeat: no-repeat;
-    margin: 0 10px 0 0;
-    padding: 0 0 0 15px;
-  }
-  li:before {
-    content: '/';
-    padding: 0 10px 0 0;
-  }
-}
-
+@import 'general.scss';
 @import 'header.scss';
 @import 'products.scss';
 @import 'product-page.scss';
