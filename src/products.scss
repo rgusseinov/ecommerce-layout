@@ -7,12 +7,13 @@
   align-items: center;
 }
 .product {
-  margin-bottom: 600px;
+  // margin-bottom: 600px;
   &__breadcrumb {
     margin: 0 0 30px 0;
   }
   &__page-content {
     display: flex;
+    margin: 0 0 100px 0;
   }
   /* Sort by Section */
   &__sortby-header {
@@ -326,5 +327,70 @@
       height: 37px;
     }
   }
-  
+
+    // Subscription section
+
+    &__subscription {
+      background-color: $main-blue-color;
+      height: 100px;    
+    }
+    .product-subscription {
+
+      .subscription-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      &__column {
+        padding: 25px 0;
+      }
+      
+
+      .subscription-label {
+        width: 425px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+      .subscription-form__form {
+        display: flex;
+        justify-content: space-between;
+        width: 570px;
+      }
+      .subscription-form {
+        display: flex;
+        justify-content: space-between;
+        &__input {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 5px;
+          border: 0;
+          width: 395px;
+          height: 53px;
+          color: #fff;
+          font-size: 16px;
+          outline: none;
+          padding-left: 15px;
+          &::placeholder {
+            color: #fff;
+          } 
+        }
+        &__submit {
+          background-color: #fff;
+          border: 0;
+          outline: none;
+          width: 140px;
+          height: 53px;
+          border-radius: 5px;
+          text-align: center;
+          color: #6F73EE;
+          font-size: 16px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
 }
