@@ -332,7 +332,8 @@
 
     &__subscription {
       background-color: $main-blue-color;
-      height: 100px;    
+      height: 100px;   
+      margin-bottom: 50px; 
     }
     .product-subscription {
 
@@ -393,4 +394,83 @@
         }
       }
     }
+}
+
+.footer {
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__column:first-child {
+      display: flex;
+      justify-content: space-between;
+      width: 510px;
+      // border: 1px solid red;
+    }
+    &__column:last-child {
+      // border: 1px solid red;
+      width: 510px;
+    }
+    &__for-buyer {
+      display: flex;
+    }
+    .buyer-column-1 {
+      margin: 0 45px 0 0;
+    }
+    .nav-row-1 {
+      display: flex;
+      .footer-nav {
+        margin-right: 50px;
+      }
+    }
+    .nav-row-2 {
+      display: flex;
+      justify-content: space-between;
+      .footer-nav {
+        // margin-right: 50px;
+      }
+    }
+  }
+ 
+  .footer-nav {
+    &__title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;      
+      color: #282739;
+      margin-bottom: 30px;
+    }
+    &__cta {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 17px;
+      color: #6F73EE;
+    }
+    &__list {
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 0 0 10px 0;
+      }
+    }
+    &__link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #5D6C7B;
+    }
+    &__contact-phone_phone {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 23px;
+      color: #282739;
+    }
+  }
+  .footer-contact {
+    margin-bottom: 15px;
+  }
+
 }
