@@ -49,11 +49,11 @@
   }
 
   // Sidebar filter Section
-  .category-filters {
+  .page-sidebar {
     max-width: 255px;
     flex: 0 0 100%;
     background-color: $bg-color;
-    margin: 0 40px 0 0;
+    margin: 0 40px 220px 0;
     height: 590px;
     &__container {
       max-width: 212px;
@@ -150,6 +150,82 @@
     }    
   }
 
+  /* Sidebar adv section */
+
+  .sidebar-adv {
+    background: radial-gradient(102.16% 238.93% at -2.16% 100%, #FFCF71 0%, #F3A712 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    .product-of-month {
+      &__container {
+        display: flex;
+        align-items: center;
+      }
+      &__header {
+        height: 60px;
+        border-bottom: 1px solid rgb(234, 234, 234);
+        // border: 1px solid red;
+        margin-top: -25px;
+        margin-bottom: 15px;
+      }
+      &__icon {
+        margin-right: 12px;
+      }
+      &__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        color: #FFFFFF;
+      }
+      &__image {
+        background-color: #F0F1F5;
+        width: 61px;
+        height: 61px;
+        border-radius: 5px;
+        margin-right: 20px;
+        img {
+          margin: 10px 0 0 0;
+        }
+      }
+      &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        color: #FFFFFF;
+        padding: 0;
+        margin: 0;
+      }
+      &__price {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .sidebar-question {
+    background: radial-gradient(71.16% 199.4% at 82.43% 76.38%, #8FE865 0%, #49AC1B 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border-radius: 10px;
+    height: 90px;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      max-width: 212px;
+      margin: 0 auto;
+    }
+    &__image {
+      margin-left: -15px;
+    }
+    &__body {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: #FFFFFF;      
+    }
+  }
+  
   /* Product Body section */
   .products-body {
     max-width: 825px;
@@ -178,6 +254,9 @@
   }
   .adv-block {
     background-color: $bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h4 {
       font-weight: 600;
       font-size: 18px;
@@ -204,12 +283,10 @@
       }
     }
     .adv-block-body {
-      // display: flex;
-      // align-items: center;
       img {
-        margin-top: -40px;
-        // width: 274px;
-        // margin: 0 auto;
+        margin-top: -50px;
+        margin-bottom: -25px;
+        width: 207px;
       }
     }
 

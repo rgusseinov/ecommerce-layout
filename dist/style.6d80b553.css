@@ -602,6 +602,7 @@ ol.breadscrumb__list li:before {
 
 .product {
   /* Sort by Section */
+  /* Sidebar adv section */
   /* Product Body section */
 }
 .product__breadcrumb {
@@ -642,14 +643,14 @@ ol.breadscrumb__list li:before {
 .product .sortby-controls img {
   margin-left: 15px;
 }
-.product .category-filters {
+.product .page-sidebar {
   max-width: 255px;
   flex: 0 0 100%;
   background-color: #F4F7FB;
-  margin: 0 40px 0 0;
+  margin: 0 40px 220px 0;
   height: 590px;
 }
-.product .category-filters__container {
+.product .page-sidebar__container {
   max-width: 212px;
   margin: 0 auto;
   padding: 20px 0;
@@ -741,6 +742,74 @@ ol.breadscrumb__list li:before {
   outline: none;
   border: 0;
 }
+.product .sidebar-adv {
+  background: radial-gradient(102.16% 238.93% at -2.16% 100%, #FFCF71 0%, #F3A712 100%);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.product .sidebar-adv .product-of-month__container {
+  display: flex;
+  align-items: center;
+}
+.product .sidebar-adv .product-of-month__header {
+  height: 60px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+  margin-top: -25px;
+  margin-bottom: 15px;
+}
+.product .sidebar-adv .product-of-month__icon {
+  margin-right: 12px;
+}
+.product .sidebar-adv .product-of-month__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+.product .sidebar-adv .product-of-month__image {
+  background-color: #F0F1F5;
+  width: 61px;
+  height: 61px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.product .sidebar-adv .product-of-month__image img {
+  margin: 10px 0 0 0;
+}
+.product .sidebar-adv .product-of-month__label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+}
+.product .sidebar-adv .product-of-month__price {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.product .sidebar-question {
+  background: radial-gradient(71.16% 199.4% at 82.43% 76.38%, #8FE865 0%, #49AC1B 100%);
+  border-radius: 10px;
+  height: 90px;
+}
+.product .sidebar-question__container {
+  display: flex;
+  align-items: center;
+  max-width: 212px;
+  margin: 0 auto;
+}
+.product .sidebar-question__image {
+  margin-left: -15px;
+}
+.product .sidebar-question__body {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
 .product .products-body {
   max-width: 825px;
   flex: 0 0 825px;
@@ -768,6 +837,9 @@ ol.breadscrumb__list li:before {
 }
 .product .adv-block {
   background-color: #F4F7FB;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product .adv-block h4 {
   font-weight: 600;
@@ -795,7 +867,9 @@ ol.breadscrumb__list li:before {
   padding: 0 5px;
 }
 .product .adv-block .adv-block-body img {
-  margin-top: -40px;
+  margin-top: -50px;
+  margin-bottom: -25px;
+  width: 207px;
 }
 .product .adv-block__container {
   padding: 35px 30px;
