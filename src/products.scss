@@ -398,7 +398,6 @@
 
 .footer {
   padding: 55px 0 0 0;
-  margin-bottom: 600px;
   background-color: #F4F7FB;
   .footer-content {
     display: flex;
@@ -412,10 +411,8 @@
       display: flex;
       justify-content: space-between;
       width: 510px;
-      // border: 1px solid red;
     }
     &__column:last-child {
-      // border: 1px solid red;
       width: 510px;
     }
     &__for-buyer {
@@ -433,15 +430,10 @@
     .nav-row-2 {
       display: flex;
       justify-content: space-between;
-      .footer-nav {
-        // margin-right: 50px;
-      }
     }
   }
   .w-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 25px;
   }
   .footer-nav {
     &__row {
@@ -507,18 +499,10 @@
   .footer-social {
     display: flex;
     align-items: center;
-    // 470 525
     justify-content: space-between;
     &__column {
       display: flex;
       align-items: center;
-      // justify-content: space-between;
-      &:first-child {
-        // width: 470px;
-      }
-      &:last-child {
-        // width: 525px;
-      }
     }
     &__logo {
       margin-right: 50px;
@@ -581,20 +565,36 @@
         margin-right: 45px;
       }
     }
-    &__block {
-      display: flex;
+    &__link {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 17px;
+      color: #5D6C7B;
     }
     .payment-block {
       display: flex;
-      margin-right: 20px;
-      img {
-        border: 1px solid #EAEBED;
+      
+      &__container {
+        background-color: #fff;
         border-radius: 3px;
-        margin-right: 10px;
+        border: 1px solid #EAEBED;
+        padding: 1px 5px;
+        margin-right: 5px;
+      }
+      img {
+        border-radius: 3px;  
+        width: 24px;
+        height: 10px;      
         &:last-child {
           margin-right: 0;
         }
       }
+    }
+    .chat-block {
+      width: 157px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
