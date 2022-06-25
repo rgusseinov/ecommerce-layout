@@ -1,7 +1,7 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap');
 
-/* $main-blue-color: #6F73EE;
+$main-blue-color: #6F73EE;
 $main-black-color: #282739;
 $second-color: hsl(210, 14%, 42%);
 $bg-color: #F4F7FB;
@@ -11,9 +11,10 @@ $bg-color: #F4F7FB;
 @import 'products.scss';
 @import 'product-page.scss';
 @import 'shopping-cart.scss';
- */
 
- body {
+
+
+/*  body {
   background-color: #fff;
   min-height: 100vh;
   position: relative;
@@ -47,7 +48,7 @@ $bg-color: #F4F7FB;
  }
 
 .btn.is-active span {
-  background: #000;
+  background: #fff;
 }
 
 .btn.is-active span:nth-child(1) {
@@ -83,7 +84,7 @@ $bg-color: #F4F7FB;
 
 .menu__list {
   display: flex;
-  font-display: column;
+  flex-direction: column;
   list-style: none;
 }
 
@@ -116,3 +117,112 @@ $bg-color: #F4F7FB;
 .menu__link:hover:after {
   width: 100%;
 }
+ */
+/* 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #ccc;
+  }
+ .menu {
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__list {
+    display: flex;
+    list-style-type: none;
+    
+  }
+  &__item {
+    margin-right: 30px;
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fc6b3f;
+  }
+ }
+
+ .sub-menu {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 250px;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 40px;
+
+    &__container {
+      display: flex;
+    }
+
+    &__cat-list {
+      list-style: none;    
+      width: 120px;
+      margin-left: 30px;
+      margin-right: 40px;
+      border-right: 1px solid #ccc;
+    }
+
+    &__cat-item {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__cat-link {
+      text-decoration: none;
+      font-size: 18px;
+      background-color: #fc6b3f;      
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+     }
+
+
+     // Sub navs
+    &__inner {
+      position: relative;      
+    }
+
+    &__sub-list {
+      position: absolute;
+      top: 0;
+      list-style: none;
+      margin-bottom: 30px;
+      opacity: 0;
+      visibility: hidden;
+      width: 200px;
+
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      &.is-active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+  
+
+ }
+ */
