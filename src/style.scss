@@ -1,13 +1,196 @@
 @import url('normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap');
 
 $main-blue-color: #6F73EE;
 $main-black-color: #282739;
 $second-color: hsl(210, 14%, 42%);
 $bg-color: #F4F7FB;
 
-@import 'general.scss';
+/* @import 'general.scss';
 @import 'header.scss';
 @import 'products.scss';
 @import 'product-page.scss';
 @import 'shopping-cart.scss';
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;700;800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #F4F8FF;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+	max-width: 1100px;
+	margin: 0 auto;
+	
+	&__controls {
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		padding: 15px 0;
+	}
+	.btn {
+		padding: 7px 10px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		font-weight: 500;
+		background-color: rgb(228, 228, 228);
+	}
+	.btn-primary {
+		background-color: #0097D7;
+		color: #fff;
+		font-weight: 500;
+	}
+	&__title {
+		font-size: 20px;
+		color: #546D96;
+		font-weight: 700;
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		height: 275px;
+	}
+	&__column {
+		&:first-child {
+			width: 800px;
+		}
+		&:last-child {
+			background-color: #EFEFEF;
+			width: 400px;
+		}
+	}
+	.app-gateway {
+		.head {
+			background-color: #0097D7;
+			padding: 7px 0 7px 10px;
+			color: #fff;
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+		&__body {
+			padding: 10px 20px 0 15px;
+		}
+
+		/* Remove margins and padding from the parent ul */
+		.tree-list {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			
+			/* Style the caret/arrow */
+			.caret {
+				cursor: pointer;
+				user-select: none; /* Prevent text selection */
+			}
+
+			/* Create the caret/arrow with a unicode, and style it */
+			.caret::before {
+				content: "\25B6";
+				color: black;
+				display: inline-block;
+				margin-right: 6px;
+			}
+
+			/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+			.caret-down::before {
+				transform: rotate(90deg);
+			}
+
+			/* Hide the nested list */
+			.nested {
+				display: none;
+				margin-left: 20px;
+				margin-bottom: 10px;
+
+				li {
+					margin-bottom: 0px;
+				}
+			}
+
+			/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+			.active {
+				display: block;
+			}
+		}
+	}
+
+
+	.gateway-info {
+		&__container {
+			max-width: 340px;
+			margin: 0 auto;
+		}
+		&__top {
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 10px;
+			padding: 17px 0;
+		}
+		&__controls {
+			display: flex;			
+		}
+		.top-container {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__prev {
+			width: 35px;
+			height: 30px;
+			border: 1px solid #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		&__next {
+			width: 35px;
+			height: 30px;
+			border: 1px solid #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		&__body {
+		}
+		.gateway-form {
+			margin-bottom: 30px;
+			&__field {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 7px;
+			}
+			&__label {
+				display: inline-block;
+				
+			}
+			&__input {
+				padding-left: 10px;
+				border: 1px solid #ccc;
+				border-radius: 3px;		
+				font-size: 16px;
+				height: 35px;
+				outline: 0;
+			}			
+		}
+		&__bottom {
+			.form-control {
+				display: flex;
+				justify-content: flex-end;
+				&__cancel {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+	
+ }
