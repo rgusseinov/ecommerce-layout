@@ -355,7 +355,7 @@ template {
 @import 'product-page.scss';
 @import 'shopping-cart.scss';
  */
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -364,7 +364,7 @@ template {
 
 body {
   background-color: #F4F8FF;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .app {
@@ -375,6 +375,12 @@ body {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 15px 0;
+}
+.app__controls .btn {
+  margin-right: 10px;
+}
+.app__controls .btn:last-child {
+  margin-right: 0;
 }
 .app .btn {
   padding: 7px 10px;
@@ -396,7 +402,7 @@ body {
 .app__content {
   display: flex;
   justify-content: space-between;
-  height: 275px;
+  min-height: 700px;
 }
 .app__column:first-child {
   width: 800px;
@@ -416,7 +422,7 @@ body {
   margin-bottom: 20px;
 }
 .app .app-gateway__body {
-  padding: 10px 20px 0 15px;
+  padding: 10px 20px 0 0;
 }
 .app .app-gateway .tree-list {
   list-style-type: none;
@@ -452,6 +458,9 @@ body {
 }
 .app .app-gateway .tree-list .active {
   display: block;
+}
+.app .gateway-info {
+  position: relative;
 }
 .app .gateway-info__container {
   max-width: 340px;
@@ -510,11 +519,12 @@ body {
   height: 35px;
   outline: 0;
 }
-.app .gateway-info__bottom .form-control {
-  display: flex;
-  justify-content: flex-end;
+.app .gateway-info__bottom {
+  position: absolute;
+  top: 650px;
+  right: 5%;
 }
-.app .gateway-info__bottom .form-control__cancel {
+.app .gateway-info__bottom .form-control__save {
   margin-right: 10px;
 }
 
