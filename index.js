@@ -1,4 +1,5 @@
-/* document.querySelector(".menu-catalog__link").onclick = function (e) {
+// For menu catalog
+document.querySelector(".menu-catalog__link").onclick = function (e) {
   const overlay = document.querySelector(".header-overlay");
   const submenu = document.querySelector(".menu-catalog__link");
 
@@ -7,8 +8,16 @@
 
   e.preventDefault();
 };
- */
 
+// For shopping cart
+document.querySelector(".h-shopping-cart").onclick = function (e) {
+  const popupMenu = document.querySelector(".s-cart-popup");
+  popupMenu.classList.toggle("show");
+  e.preventDefault();
+};
+
+// For project client server app
+/* 
 const toggler = document.getElementsByClassName("caret");
 
 for (let i = 0; i < toggler.length; i++) {
@@ -17,3 +26,4 @@ for (let i = 0; i < toggler.length; i++) {
     this.classList.toggle("caret-down");
   });
 }
+ */

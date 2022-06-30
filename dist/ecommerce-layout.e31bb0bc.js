@@ -118,24 +118,32 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-/* document.querySelector(".menu-catalog__link").onclick = function (e) {
-  const overlay = document.querySelector(".header-overlay");
-  const submenu = document.querySelector(".menu-catalog__link");
-
+// For menu catalog
+document.querySelector(".menu-catalog__link").onclick = function (e) {
+  var overlay = document.querySelector(".header-overlay");
+  var submenu = document.querySelector(".menu-catalog__link");
   overlay.classList.toggle("show");
   submenu.classList.toggle("open");
-
   e.preventDefault();
-};
- */
-var toggler = document.getElementsByClassName("caret");
+}; // For shopping cart
 
-for (var i = 0; i < toggler.length; i++) {
+
+document.querySelector(".h-shopping-cart").onclick = function (e) {
+  var popupMenu = document.querySelector(".s-cart-popup");
+  popupMenu.classList.toggle("show");
+  e.preventDefault();
+}; // For project client server app
+
+/* 
+const toggler = document.getElementsByClassName("caret");
+
+for (let i = 0; i < toggler.length; i++) {
   toggler[i].addEventListener("click", function () {
     this.parentElement.querySelector(".nested").classList.toggle("active");
     this.classList.toggle("caret-down");
   });
 }
+ */
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -164,7 +172,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62407" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54097" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

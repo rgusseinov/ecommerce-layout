@@ -1,7 +1,6 @@
 .header {
   border-bottom: 2px solid #ECF3FF;
   margin: 0 0 25px 0;
-  z-index: 1;
   &__top {
     border: 1px solid #ECF3FF;
     .wrapper {
@@ -178,7 +177,7 @@
       background-color: #fff;
       display: flex;
       position: absolute;
-      top: 0;
+      top: -35px;
       width: 890px;
       min-height: 270px;
       background: #FFFFFF;
@@ -261,6 +260,122 @@
       visibility: visible;
     }
   }
+
+
+  // Shopping cart checkout
+  .s-cart-popup {
+    max-width: 305px;
+    margin-left: 100px;
+    position: absolute;
+    right: 300px;
+    top: 106px;
+    opacity: 0;
+    visibility: hidden;
+    &__container {
+      width: 265px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__top {
+      background-color: #F4F7FB;
+      height: 56px;
+      border-radius: 5px 5px 0 0;
+    }
+    &__title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+      color: #282739;
+    }
+    &__info {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #5D6C7B;
+    }
+    &__content {
+      overflow-y: scroll;
+      max-height: 210px;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #EAEBED;
+      padding: 15px 0;
+      &:last-child {
+        border: 0;
+      }
+    }
+    &__image {
+      flex: 0 0 20%;
+      margin-right: 10px;
+    }
+    &__details {
+      flex: 0 0 57%;
+    }
+    &__remove {
+      display: flex;
+      justify-content: flex-end;
+      flex: 0 0 20%;
+    }
+    .s-cart-details {      
+      &__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #282739;
+        margin: 0;        
+      }
+      &__price {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #282739;        
+      }
+      &__qty {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #282739;
+      }
+    }
+    &__footer {
+      background: #FFFFFF;
+      box-shadow: 0px -4px 50px rgba(0, 0, 0, 0.1);
+      border-radius: 0px 0px 5px 5px;
+      
+    }
+    .s-cart-footer {
+      padding: 20px 0;
+      &__label {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #5D6C7B;
+      }
+      &__price {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;        
+        color: #282739;
+        margin: 0;
+      }
+      &__checkout {
+        background-color: #6F73EE;
+        border-radius: 5px;
+        color: #fff;
+        padding: 12px 29px;
+        font-size: 12px;
+      }
+    }
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
   &__menu {
     height: 40px;
     background-color: $bg-color;

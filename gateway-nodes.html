@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Client server</title>
+	<link rel="stylesheet" href="./src/style.scss"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+<body>
+
+	<div class="app">
+		<div class="app__top">
+			<h1 class="app__title">Иерархия узлов</h1>
+		</div>
+
+		<div class="app__content">
+			<div class="app__column app-gateway">
+
+				<div class="app__controls app-controls">
+					<input type="button" class="app-controls__plus btn" value="Добавить узел"/>
+					<input type="button" class="app-controls__minus btn" value="Удалить узел"/>
+				</div>
+				<div class="app-gateway__body">
+					<div class="gateway-nodes">
+						<div class="app-gateway__parent-node head">Option Set</div>
+						<ul class="gateway-nodes__tree-list tree-list">
+							<li><span class="tree-list__caret caret">Main node</span>
+								<ul class="tree-list tree-list__nested nested">
+									<li>Sub node 1</li>
+									<li>Sub node 2</li>
+									<li><span class="tree-list__caret caret">Sub node 3</span>
+										<ul class="tree-list tree-list__nested nested">
+											<li>Sub node 4</li>
+											<li>Sub node 5</li>
+											<li><span class="tree-list__caret caret">Sub node 6</span>
+												<ul class="tree-list tree-list__nested nested">
+													<li>Sub 1</li>
+													<li>Sub 2</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li><span class="tree-list__caret caret">Main node 2</span>
+								<ul class="tree-list tree-list__nested nested">
+									<li>Sub node 1</li>
+									<li>Sub node 2</li>
+									<li><span class="tree-list__caret caret">Sub node 3</span>
+										<ul class="tree-list tree-list__nested nested">
+											<li>Sub node 4</li>
+											<li>Sub node 5</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		
+
+			<div class="app__column gateway-info">
+				<div class="gateway-info__top">
+					<div class="gateway-info__container top-container">
+						<h2 class="gateway-info__title">Узел</h2>
+						<div class="gateway-info__controls">
+							<div class="gateway-info__prev">
+								<i class="fa fa-chevron-left" aria-hidden="true"></i>
+							</div>
+							<div class="gateway-info__next">
+								<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="gateway-info__body">
+					<div class="gateway-info__container">
+						<form class="app-gateway__form gateway-form">				
+							<div class="gateway-form__field">
+								<span class="gateway-form__label">Имя узла</span>
+								<input type="text" class="gateway-form__input" placeholder="Значени 1" />
+							</div>
+							<div class="gateway-form__field">
+								<span class="gateway-form__label">IP-адрес</span>
+								<input type="text" class="gateway-form__input" placeholder="Значени 2" />
+							</div>
+							<div class="gateway-form__field">
+								<span class="gateway-form__label">Web-порт</span>
+								<input type="text" class="gateway-form__input" placeholder="Значени 3" />
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="gateway-info__bottom">	
+					<div class="gateway-info__container">				
+						<div class="gateway-form__controls form-control">
+							<input type="button" class="form-control__save btn btn-primary" value="Сохранить" />
+							<input type="button" class="form-control__cancel btn" value="Отмена" />
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<script src="./index.js"></script>
+</body>
+</html>
