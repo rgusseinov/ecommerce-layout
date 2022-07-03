@@ -16,6 +16,13 @@ document.querySelector(".h-shopping-cart").onclick = function (e) {
   e.preventDefault();
 };
 
+// For call center popup
+document.querySelector(".header-contact__call").onclick = function (e) {
+  const popupMenu = document.querySelector(".callcenter-popup");
+  popupMenu.classList.toggle("show");
+  e.preventDefault();
+};
+
 // For project client server app
 /* 
 const toggler = document.getElementsByClassName("caret");

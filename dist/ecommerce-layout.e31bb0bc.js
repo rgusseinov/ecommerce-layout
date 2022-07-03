@@ -132,6 +132,13 @@ document.querySelector(".h-shopping-cart").onclick = function (e) {
   var popupMenu = document.querySelector(".s-cart-popup");
   popupMenu.classList.toggle("show");
   e.preventDefault();
+}; // For call center popup
+
+
+document.querySelector(".header-contact__call").onclick = function (e) {
+  var popupMenu = document.querySelector(".callcenter-popup");
+  popupMenu.classList.toggle("show");
+  e.preventDefault();
 }; // For project client server app
 
 /* 
@@ -172,7 +179,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49904" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50042" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
