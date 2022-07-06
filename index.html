@@ -83,7 +83,7 @@
 
 					<div class="header-middle__column header-catalog">
 						<a href="#" class="menu-catalog__link">
-							<div class="menu-catalog__icon"> </div>
+							<div class="menu-catalog__icon"></div>
 							<div class="menu-catalog__label">Каталог</div>
 						</a>
 					</div>
@@ -275,14 +275,30 @@
 				<div class="sortby-header__block label">Фильтр</div>
 				<div class="sortby-header__block sortby-controls">
 					<div class="sortby-controls__label">Сортировать:</div>
+
+					
 					<div class="sortby-controls__price sort-btn sortby-price">
-						По цене
-						<img src="./src/images/main/product-item/arrow-down.svg" alt="По цене" />
+						<div class="sortby-price__container">
+							По цене
+							<img src="./src/images/main/product-item/arrow-down.svg" alt="По цене" />
+						</div>
+						<div class="sortby-price-popup price-popup">
+							<div class="sortby-price-popup__item">Сначало дорогие</div>
+							<div class="sortby-price-popup__item selected">Сначала дешёвые</div>
+						</div>
 					</div>
+
 					<div class="sortby-controls__params sortby-params sort-btn">
-						По дальности хода
-						<img src="./src/images/main/product-item/arrow-down.svg" alt="По дальности хода" />
+						<div class="sortby-params__container">
+							По дальности хода
+							<img src="./src/images/main/product-item/arrow-down.svg" alt="По дальности хода" />
+						</div>
+						<div class="sortby-params-popup params-popup">
+							<div class="sortby-params-popup__item">Все</div>
+							<div class="sortby-params-popup__item selected">По дальности хода</div>
+						</div>
 					</div>
+
 				</div>
 			</div>
 
@@ -429,20 +445,39 @@
 
 				<div class="product__products-body products-body">
 					<div class="products-body__list products-list">
-						<a href="/product-page.html" class="products-list__item product-list-item">
+
+						<a href="#" class="products-list__item product-list-item">
 							<div class="product-list-item__thumbnail product-thumbnail">
 								<div class="product-thumbnail__container">
+									
 									<div class="product-thumbnail__marketing product-marketing">
 										<div class="product-marketing__label hit">Хит</div>
 										<div class="product-marketing__compare">
 											<img src="./src/images/main/product-item/compare.svg" alt="kugoo"/>
 										</div>
-									</div>								
-									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
 									</div>
+
+									<div class="product-thumbnail__image">
+										<div class="image-switch">
+											<div class="image-switch__item img1">
+												<div class="image-switch__image"><img src="./src/images/main/product-item/scooter-img-1.png" alt="kugoo"/></div>
+											</div>
+											<div class="image-switch__item img2">
+												<div class="image-switch__image"><img src="./src/images/main/product-item/scooter-img-2.png" alt="kugoo"/></div>
+											</div>
+											<div class="image-switch__item img3">
+												<div class="image-switch__image"><img src="./src/images/main/product-item/scooter-img-5.png" alt="kugoo"/></div>
+											</div>
+										</div>
+										<ul class="product-thumbnail__navs thumbnail-navs">
+											<li class="thumbnail-navs__item arrow-left"><img src="./src/images/main/product-item/thumbnail-arrow-left.svg" alt="arrow left"></li>
+											<li class="thumbnail-navs__item arrow-right"><img src="./src/images/main/product-item/thumbnail-arrow-right.svg" alt="arrow right"></li>											
+										</ul>
+									</div>
+									
 								</div>
-							</div>							
+							</div>
+
 							<div class="product-list-item__body product-body">
 								<div class="product-body__container">
 									<div class="product-body__block product-title">Kugoo Kirin M4</div>
@@ -487,7 +522,9 @@
 									</div>
 								</div>
 							</div>
+
 						</a>
+
 						<a href="/product-page.html" class="products-list__item product-list-item">
 							<div class="product-list-item__thumbnail product-thumbnail">
 								<div class="product-thumbnail__container">
@@ -498,7 +535,7 @@
 										</div>
 									</div>								
 									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
+										<img src="./src/images/main/product-item/scooter-img-1.png" alt="kugoo"/>
 									</div>
 								</div>
 							</div>							
@@ -579,7 +616,7 @@
 										</div>
 									</div>								
 									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
+										<img src="./src/images/main/product-item/scooter-img-1.png" alt="kugoo"/>
 									</div>
 								</div>
 							</div>							
@@ -638,7 +675,7 @@
 										</div>
 									</div>								
 									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
+										<img src="./src/images/main/product-item/scooter-img-1.png" alt="kugoo"/>
 									</div>
 								</div>
 							</div>							
@@ -697,7 +734,7 @@
 										</div>
 									</div>								
 									<div class="product-thumbnail__image">
-										<img src="./src/images/main/product-item/111.png" alt="kugoo"/>
+										<img src="./src/images/main/product-item/scooter-img-1.png" alt="kugoo"/>
 									</div>
 								</div>
 							</div>							

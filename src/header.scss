@@ -69,7 +69,7 @@
       font-size: 16px;
       font-weight: 600;
     }
-    .menu-catalog__link.open{
+    .menu-catalog__link.show{
       background: #8185F9; 
       .menu-catalog__icon {
         background-image: url('./images/header/catalog-icon-open.svg');
@@ -163,13 +163,18 @@
       &__block img {
         padding: 0 10px 0 0;
       }
-      .cart {
+      .h-shopping-cart {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+/*       .cart {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 14px;
         line-height: 26px;
-      }
+      } */
     }
   }
   
@@ -328,6 +333,7 @@
     }
     &__remove {
       width: 10%;
+      cursor: pointer;
     }
     .s-cart-details {      
       &__title {
