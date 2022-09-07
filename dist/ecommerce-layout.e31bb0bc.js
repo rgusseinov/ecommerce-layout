@@ -119,14 +119,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"index.js":[function(require,module,exports) {
 // Close all popups before opening new one
-var popupToggles = {
+
+/*
+let popupToggles = {
   isCatalogOpen: false,
   isCartOpen: false,
-  isCallCenterOpen: false
+  isCallCenterOpen: false,
 };
 
 function togglePopup(target, popupType) {
-  /*   const classListArr = document.querySelectorAll(".show");
+  const classListArr = document.querySelectorAll(".show");
   console.log(popupToggles);
   classListArr.forEach((item) => {
     if (
@@ -138,75 +140,84 @@ function togglePopup(target, popupType) {
     } else {
       item.classList.remove("show");
     }
-  }); */
-} // For menu catalog
+  });
+}
 
-
+// For menu catalog
 document.querySelector(".menu-catalog__link").onclick = function (e) {
-  var overlay = document.querySelector(".header-overlay");
-  var submenu = document.querySelector(".menu-catalog__link");
+  const overlay = document.querySelector(".header-overlay");
+  const submenu = document.querySelector(".menu-catalog__link");
+
   overlay.classList.toggle("show");
   submenu.classList.toggle("show");
+
   popupToggles.isCatalogOpen = !popupToggles.isCatalogOpen;
   togglePopup(e.target, "catalog");
+
   e.preventDefault();
-}; // For shopping cart
+};
 
-
+// For shopping cart
 document.querySelector(".h-shopping-cart").onclick = function (e) {
-  var popupMenu = document.querySelector(".s-cart-popup");
+  const popupMenu = document.querySelector(".s-cart-popup");
   popupMenu.classList.toggle("show");
+
   popupToggles.isCartOpen = !popupToggles.isCartOpen;
   togglePopup(e.target, "cart");
+
   e.preventDefault();
-}; // For call center popup
+};
 
-
+// For call center popup
 document.querySelector(".header-contact__call").onclick = function (e) {
-  var popupMenu = document.querySelector(".callcenter-popup");
+  const popupMenu = document.querySelector(".callcenter-popup");
   popupMenu.classList.toggle("show");
+
   popupToggles.isCallCenterOpen = !popupToggles.isCallCenterOpen;
   togglePopup(e.target, "callcenter");
+
   e.preventDefault();
-}; // Sort by price
+};
 
-
+// Sort by price
 document.querySelector(".sortby-price").onclick = function (e) {
-  var popupMenu = document.querySelector(".price-popup");
-  var sortBlock = document.querySelector(".sortby-price");
-  popupMenu.classList.toggle("show");
-  sortBlock.classList.toggle("selected");
-  e.preventDefault();
-}; // Sort by params
-
-
-document.querySelector(".sortby-params").onclick = function (e) {
-  var popupMenu = document.querySelector(".sortby-params-popup");
-  var sortBlock = document.querySelector(".sortby-params");
+  const popupMenu = document.querySelector(".price-popup");
+  const sortBlock = document.querySelector(".sortby-price");
   popupMenu.classList.toggle("show");
   sortBlock.classList.toggle("selected");
   e.preventDefault();
 };
 
-var slidePos = 0;
-var slides = 3;
+// Sort by params
+document.querySelector(".sortby-params").onclick = function (e) {
+  const popupMenu = document.querySelector(".sortby-params-popup");
+  const sortBlock = document.querySelector(".sortby-params");
+  popupMenu.classList.toggle("show");
+  sortBlock.classList.toggle("selected");
+  e.preventDefault();
+};
+*/
+var slidePos = 1;
+var SLIDE_COUNT = 3;
 
 document.querySelector(".arrow-left").onclick = function (e) {
-  slidePos--;
-  console.log("slidePos left", slidePos);
   if (slidePos <= 0) return;
+  slidePos--;
+  if (slidePos <= 0) return; // console.log(`slidePos left`, slidePos);
+
   var swtichImage = document.querySelector(".img" + slidePos).querySelector(".image-switch__image");
   swtichImage.style.opacity = "1";
   swtichImage.style.zIndex = "-1";
 };
 
 document.querySelector(".arrow-right").onclick = function (e) {
-  slidePos++;
-  if (slidePos > slides) return;
+  if (slidePos > SLIDE_COUNT) return;
+  if (slidePos == 0) slidePos++; // console.log(`slidePos right`, slidePos);
+
   var swtichImage = document.querySelector(".img" + slidePos).querySelector(".image-switch__image");
   swtichImage.style.opacity = "1";
   swtichImage.style.zIndex = "-1";
-  console.log("slidePos right", slidePos);
+  slidePos++;
 }; // For project client server app
 
 /* 
@@ -247,7 +258,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58272" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10196" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
